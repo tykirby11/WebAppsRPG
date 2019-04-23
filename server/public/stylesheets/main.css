@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-image: url(http://d289qh4hsbjjw7.cloudfront.net/rpgmaker-20130522223546811/files/left-tokiwa-graphics-battle-bg1.jpg);
+  display: flex;
+  top: 0;
+  background-size: cover;
+}
+
+.content {
+  width: 600px;
+  height: 480px;
+  margin: auto;
+  border-style: double;
+  border-color: white;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: rgba(128, 128, 128, 0.6);
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+#mainTitle {
+  font-family: "MedievalSharp", sans-serif;
+  font-size: 80px;
+  color: white;
+  margin-bottom: -10px;
+}
+
+#secondTitle {
+  font-family: "MedievalSharp", sans-serif;
+  font-size: 46px;
+  color: white;
+}
+
+.menuTable {
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  text-align: center;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.menuTable td {
+  padding: 8px;
+}
+
+.menuTable a {
+  text-decoration: none;
+  color: white;
+}
+
+.menuTable a:hover {
+  font-size: 26px;
+}
+
+.menuTable img {
+  height: 32px;
+  width: 26px;
+  vertical-align: middle;
+}
+

@@ -1,0 +1,44 @@
+2019-04-03 17:25:57,299  WARN [ModalContext] - ScalaProject - Project server has platform default sourceLevel.
+2019-04-03 17:25:57,302  WARN [ModalContext] - ScalaProject - Project server runs on platform default installation.
+2019-04-03 17:25:57,311  WARN [ModalContext] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-03 17:25:57,311  WARN [ModalContext] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-03 17:25:57,312  WARN [ModalContext] - ScalaProject - Project client has platform default sourceLevel.
+2019-04-03 17:25:57,312  WARN [ModalContext] - ScalaProject - Project client runs on platform default installation.
+2019-04-03 17:26:00,115  WARN [ModalContext] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-03 17:26:00,116  WARN [ModalContext] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-03 17:26:00,172  WARN [ModalContext] - ScalaProject - Project client has platform default sourceLevel.
+2019-04-03 17:26:00,172  WARN [ModalContext] - ScalaProject - Project client runs on platform default installation.
+2019-04-03 17:26:00,560  WARN [ModalContext] - ScalaProject - Project server has platform default sourceLevel.
+2019-04-03 17:26:00,560  WARN [ModalContext] - ScalaProject - Project server runs on platform default installation.
+2019-04-03 17:26:01,547  WARN [Worker-2] - ScalaProject - Project server has platform default sourceLevel.
+2019-04-03 17:26:01,548  WARN [Worker-2] - ScalaProject - Project server runs on platform default installation.
+2019-04-03 17:26:01,729  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-04-03 17:26:01,744  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-04-03 17:26:01,818  WARN [Worker-6] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-03 17:26:01,818  WARN [Worker-6] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-03 17:26:03,825  WARN [Worker-2] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-03 17:26:03,826  WARN [Worker-2] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-03 18:18:08,098  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-03 18:18:08,099  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-09 13:41:49,713  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-09 13:41:49,714  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-09 13:41:53,449  WARN [Worker-0] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-09 13:41:53,450  WARN [Worker-0] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-09 13:41:53,721  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-04-09 13:41:53,737  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-04-10 17:23:40,040  WARN [Worker-22] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-10 17:23:40,041  WARN [Worker-22] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-10 17:23:40,469  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-04-10 17:23:40,827  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-04-10 18:03:41,629  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-10 18:03:41,630  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-23 13:43:28,106  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-23 13:43:28,107  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-23 13:43:28,454  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-23 13:43:28,454  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-23 13:43:28,555  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-04-23 13:43:28,577  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-04-23 13:43:31,639  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-23 13:43:31,639  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-04-23 13:43:33,591  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-04-23 13:43:33,591  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
