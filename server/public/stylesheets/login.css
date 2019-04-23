@@ -8,7 +8,6 @@ body {
 }
 
 a {
-  color: #92badd;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -70,6 +69,10 @@ input[type=text],input[type=password] {
   width: 85%;
   border: 2px solid #f6f6f6;
   border-radius: 5px 5px 5px 5px;
+}
+
+#noAccount{
+	padding-bottom: 10%;
 }
 
 * {
