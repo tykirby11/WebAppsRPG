@@ -8,10 +8,9 @@ import play.api.data.Forms._
 
 @Singleton
 class mainMenuController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
-
-  def index = Action {
-    Ok(views.html.gamePage())
-  def mainmenu = Action { implicit request =>
-    Ok(views.html.menu())
-  }
+  
+ def mainmenu = Action{ implicit request =>
+   Ok(views.html.menu())
+ }
+ 
 }
