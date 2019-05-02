@@ -3,7 +3,11 @@
 # ~~~~
 
 # Main Menu
-GET        /menu                         controllers.mainMenuController.mainmenu
+GET        /                        controllers.mainMenuController.mainmenu
+GET        /game                         controllers.mainMenuController.game
+GET		   /glossary				controllers.mainMenuController.glossary
+GET		   /leaderboard 			controllers.mainMenuController.leaderboard
+
 
 
 GET	   /login						 controllers.LoginController.login
