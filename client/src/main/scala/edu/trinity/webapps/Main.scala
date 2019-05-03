@@ -1,11 +1,11 @@
-//package edu.trinity.webapps
-//
-//
-//import org.scalajs.dom
+package edu.trinity.webapps
+
+
+import org.scalajs.dom
 //import org.querki.jquery._
-//
-//object Game extends App {
-//  
+
+object Main {
+  def main(args: Array[String]): Unit = {
 //    private var x = 100
 //    private var y = 100
 //    private val canvas = dom.document.getElementById("canvas").asInstanceOf[dom.raw.HTMLCanvasElement]
@@ -20,4 +20,5 @@
 //
 //        context.fillRect(x, y, 30, 30)
 //    }
-//}
+  }
+}
