@@ -1,24 +1,17 @@
 package edu.trinity.webapps
 
-
+import edu.trinity.webapps.shared.SharedMessages
 import org.scalajs.dom
-//import org.querki.jquery._
 
-object Main {
+object ScalaJSExample {
+
   def main(args: Array[String]): Unit = {
-//    private var x = 100
-//    private var y = 100
-//    private val canvas = dom.document.getElementById("canvas").asInstanceOf[dom.raw.HTMLCanvasElement]
-//    private val context = canvas.getContext("2d")
-//
-//    $("#canvas").click(() => {
-//        y -= 10
-//        drawToCanvas()
-//    })
-//
-//    def drawToCanvas(): Unit = {
-//
-//        context.fillRect(x, y, 30, 30)
-//    }
+
+    if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawToCanvas()
   }
+  
+  case class NotAString(i: Int, s: String)
+  val a: Any = NotAString(5, "hi")
+  a.asInstanceOf[NotAString].i*2 
 }
+

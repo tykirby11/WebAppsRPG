@@ -1,0 +1,23 @@
+package edu.trinity.webapps
+
+import org.scalajs.dom
+import org.querki.jquery._
+
+object CanvasDrawing {
+    private var x = 100
+    private var y = 100
+    private val canvas = dom.document.getElementById("gameCanvas").asInstanceOf[dom.raw.HTMLCanvasElement]
+    private val context = canvas.getContext("2d")
+
+    $("#gameCanvas").click(() => {
+        y -= 10
+        drawToCanvas()
+    })
+
+    def drawToCanvas(): Unit = {
+        context.fillRect(x, y, 30, 30)
+    }
+    
+    
+    
+}
