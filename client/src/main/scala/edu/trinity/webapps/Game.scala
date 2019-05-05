@@ -12,18 +12,6 @@ object CanvasDrawing {
     private val bw = 125
     private val bh = 50
     
-    //test stuff
-    
-//    $("#gameCanvas").click(() => {
-//        y -= 10
-//        drawToCanvas()
-//    })
-//
-//    def drawToCanvas(): Unit = {
-//        context.fillRect(x, y, 30, 30)
-//    }
-//    
-    //working on game
     
     def drawArena(): Unit = {
       
@@ -45,33 +33,18 @@ object CanvasDrawing {
         
     }
     
-//    def mousePos(){
-//      
-//      var rect = canvas.getBoundingClientRect();
-//      return {
-//        x: event.clientx - rect.left;
-//        y: event.clienty - rect.top;
-//      };
-//    }
-//    
-//    def isInside(pos,rect){
-//      return pos.x > rect.x && pos.x < rect.x + rect.width && pos.y < rect.y + rect.height && pos.y > rect.y
-//        
-//    }
-//    
-//    var rect = {
-//      x:220,
-//      y:375,
-//      width:200,
-//      height: 100
-//    }
-//    
-//    canvas.addEventListener("click", function(evt){
-//      var mousePos = mousePos(canvas, evt);
-//      if(isInside(mousePos,rect)){
-//        alert("clicked");
-//      }
-//      
-//    }
+    dom.document.onmousedown = (e: dom.MouseEvent) => {
+      val coords = (e.clientX, e.clientY)
+      
+      println(s"x: ${coords._1}, y: ${coords._2}")
+      
+      if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 461 && e.clientY < 505)){
+        context.fillRect(20,20,150,100);
+      }
+    }
+    
+   def attack(): Unit = {
+     
+   }
     
 }
