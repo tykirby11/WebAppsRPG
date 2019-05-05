@@ -11,6 +11,7 @@ class mainMenuController @Inject()(cc: ControllerComponents) extends AbstractCon
 
   def index = Action {
     Ok(views.html.gamePage())
+  }
   def mainmenu = Action { implicit request =>
     Ok(views.html.menu())
   }

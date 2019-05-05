@@ -42,3 +42,15 @@
 2019-04-23 13:43:31,639  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
 2019-04-23 13:43:33,591  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
 2019-04-23 13:43:33,591  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:49,409  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:49,411  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:50,171  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:50,172  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:50,252  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:50,252  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:55,574  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:55,574  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:57,571  WARN [Worker-4] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:57,571  WARN [Worker-4] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:46:00,562  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-05 15:46:00,579  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
