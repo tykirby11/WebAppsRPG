@@ -1,16 +1,22 @@
-@* gamePage Template File *@
 @(param: Any)
 
 @main("Heroes of the Code Block"){
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
 
 	<div id = "game-container">
 
 		<h2>Heroes of the Code Block</h2>
 	
 		<h3>How Long Can You Last in Scalandia?</h3>
-		
-		<div id="game" style="width:800px;height:500px;border:1px solid #000;">Place Game Here :-)</div>
-	
+
+
+<canvas id="gameCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
+    @scalajs.html.scripts("csci3345-s19-client-rpg", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+
+
 	</div>
 	
 }
