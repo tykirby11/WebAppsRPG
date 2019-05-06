@@ -42,3 +42,287 @@
 2019-04-23 13:43:31,639  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
 2019-04-23 13:43:33,591  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
 2019-04-23 13:43:33,591  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:49,409  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:49,411  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:50,171  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:50,172  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:50,252  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:50,252  WARN [Worker-7] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:55,574  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:55,574  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:45:57,571  WARN [Worker-4] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 15:45:57,571  WARN [Worker-4] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 15:46:00,562  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-05 15:46:00,579  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-05-05 16:02:26,785  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:02:26,785  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:02:27,816  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-05 16:02:27,833  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-05-05 16:03:55,245  WARN [Worker-3] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:03:55,246  WARN [Worker-3] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:03:55,249  WARN [Worker-3] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:03:55,249  WARN [Worker-3] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:05:40,436  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:05:40,436  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:05:40,439  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:05:40,439  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:33,177  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:33,178  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:37,471  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-05 16:09:37,483  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-05-05 16:09:37,625  WARN [Worker-17] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:37,626  WARN [Worker-17] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:37,660  WARN [Worker-17] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:37,660  WARN [Worker-17] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:39,892  WARN [Worker-4] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:39,892  WARN [Worker-4] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:41,424  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:41,424  WARN [Worker-9] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:54,333  WARN [Worker-6] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:54,333  WARN [Worker-6] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:09:54,336  WARN [Worker-6] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-05 16:09:54,336  WARN [Worker-6] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-05 16:10:10,250  WARN [ModalContext] - ScalaProject - Project client has platform default sourceLevel.
+2019-05-05 16:10:10,250  WARN [ModalContext] - ScalaProject - Project client runs on platform default installation.
+2019-05-05 16:10:13,426  WARN [ModalContext] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:13,426  WARN [ModalContext] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:13,531  WARN [ModalContext] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:13,531  WARN [ModalContext] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:14,687  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:14,687  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:14,689  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:14,689  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:14,690  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:14,691  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:14,691  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:14,691  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:14,691  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:14,691  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:14,748 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Error thrown while initializing the presentation compiler.
+Java Model Exception: Java Model Status [server does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:560)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2471)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2202)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2224)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths(ClasspathManagement.scala:149)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths$(ClasspathManagement.scala:148)
+	at org.scalaide.core.internal.project.ScalaProject.jdkPaths(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath(ClasspathManagement.scala:136)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath$(ClasspathManagement.scala:135)
+	at org.scalaide.core.internal.project.ScalaProject.scalaClasspath(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ScalaProject.setupCompilerClasspath(ScalaProject.scala:498)
+	at org.scalaide.core.internal.project.ScalaProject.initializeCompilerSettings(ScalaProject.scala:485)
+	at org.scalaide.core.internal.project.ScalaProject.prepareCompilerSettings(ScalaProject.scala:438)
+	at org.scalaide.core.internal.project.ScalaProject.$anonfun$presentationCompiler$1(ScalaProject.scala:162)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.liftedTree1$1(PresentationCompilerProxy.scala:154)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.create(PresentationCompilerProxy.scala:153)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.initialize(PresentationCompilerProxy.scala:118)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.obtainPc$1(PresentationCompilerProxy.scala:80)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.internal(PresentationCompilerProxy.scala:100)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.apply(PresentationCompilerProxy.scala:58)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit.forceReconcile(InteractiveCompilationUnit.scala:150)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit.forceReconcile$(InteractiveCompilationUnit.scala:149)
+	at org.scalaide.core.internal.jdt.model.ScalaSourceFile.forceReconcile(ScalaSourceFile.scala:71)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.handleReconciliation(ScalaReconcilingStrategy.scala:54)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.reconcile(ScalaReconcilingStrategy.scala:39)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:77)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:69)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+2019-05-05 16:10:14,800 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Error thrown while initializing the presentation compiler.
+Java Model Exception: Java Model Status [server does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:560)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2471)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2202)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2224)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths(ClasspathManagement.scala:149)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths$(ClasspathManagement.scala:148)
+	at org.scalaide.core.internal.project.ScalaProject.jdkPaths(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath(ClasspathManagement.scala:136)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath$(ClasspathManagement.scala:135)
+	at org.scalaide.core.internal.project.ScalaProject.scalaClasspath(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ScalaProject.setupCompilerClasspath(ScalaProject.scala:498)
+	at org.scalaide.core.internal.project.ScalaProject.initializeCompilerSettings(ScalaProject.scala:485)
+	at org.scalaide.core.internal.project.ScalaProject.prepareCompilerSettings(ScalaProject.scala:438)
+	at org.scalaide.core.internal.project.ScalaProject.$anonfun$presentationCompiler$1(ScalaProject.scala:162)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.liftedTree1$1(PresentationCompilerProxy.scala:154)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.create(PresentationCompilerProxy.scala:153)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.initialize(PresentationCompilerProxy.scala:118)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.obtainPc$1(PresentationCompilerProxy.scala:80)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.internal(PresentationCompilerProxy.scala:100)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.apply(PresentationCompilerProxy.scala:58)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit.currentProblems(InteractiveCompilationUnit.scala:183)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit.currentProblems$(InteractiveCompilationUnit.scala:180)
+	at org.scalaide.core.internal.jdt.model.ScalaSourceFile.currentProblems(ScalaSourceFile.scala:71)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit.forceReconcile(InteractiveCompilationUnit.scala:151)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit.forceReconcile$(InteractiveCompilationUnit.scala:149)
+	at org.scalaide.core.internal.jdt.model.ScalaSourceFile.forceReconcile(ScalaSourceFile.scala:71)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.handleReconciliation(ScalaReconcilingStrategy.scala:54)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.reconcile(ScalaReconcilingStrategy.scala:39)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:77)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:69)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+2019-05-05 16:10:14,816 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Error thrown while initializing the presentation compiler.
+Java Model Exception: Java Model Status [server does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:560)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2471)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2202)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2224)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths(ClasspathManagement.scala:149)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths$(ClasspathManagement.scala:148)
+	at org.scalaide.core.internal.project.ScalaProject.jdkPaths(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath(ClasspathManagement.scala:136)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath$(ClasspathManagement.scala:135)
+	at org.scalaide.core.internal.project.ScalaProject.scalaClasspath(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ScalaProject.setupCompilerClasspath(ScalaProject.scala:498)
+	at org.scalaide.core.internal.project.ScalaProject.initializeCompilerSettings(ScalaProject.scala:485)
+	at org.scalaide.core.internal.project.ScalaProject.prepareCompilerSettings(ScalaProject.scala:438)
+	at org.scalaide.core.internal.project.ScalaProject.$anonfun$presentationCompiler$1(ScalaProject.scala:162)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.liftedTree1$1(PresentationCompilerProxy.scala:154)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.create(PresentationCompilerProxy.scala:153)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.initialize(PresentationCompilerProxy.scala:118)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.obtainPc$1(PresentationCompilerProxy.scala:80)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.internal(PresentationCompilerProxy.scala:100)
+	at org.scalaide.ui.internal.editor.decorators.BaseSemanticAction.apply(BaseSemanticAction.scala:139)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.$anonfun$reconciled$3(ScalaSourceFileEditor.scala:105)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:230)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:226)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.$anonfun$reconciled$1(ScalaSourceFileEditor.scala:105)
+	at scala.collection.mutable.ArraySeq.foreach(ArraySeq.scala:74)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.reconciled(ScalaSourceFileEditor.scala:103)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.$anonfun$reconciled$5(ScalaSourceFileEditor.scala:478)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.$anonfun$reconciled$5$adapted(ScalaSourceFileEditor.scala:478)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.reconciled(ScalaSourceFileEditor.scala:478)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor.reconciled(ScalaSourceFileEditor.scala:379)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.$anonfun$handleReconciliation$2(ScalaReconcilingStrategy.scala:65)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.$anonfun$handleReconciliation$2$adapted(ScalaReconcilingStrategy.scala:65)
+	at scala.Option.foreach(Option.scala:257)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.handleReconciliation(ScalaReconcilingStrategy.scala:65)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.reconcile(ScalaReconcilingStrategy.scala:39)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:77)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:69)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+2019-05-05 16:10:14,836 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Error thrown while initializing the presentation compiler.
+Java Model Exception: Java Model Status [server does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:560)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2471)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2202)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2224)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths(ClasspathManagement.scala:149)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths$(ClasspathManagement.scala:148)
+	at org.scalaide.core.internal.project.ScalaProject.jdkPaths(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath(ClasspathManagement.scala:136)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath$(ClasspathManagement.scala:135)
+	at org.scalaide.core.internal.project.ScalaProject.scalaClasspath(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ScalaProject.setupCompilerClasspath(ScalaProject.scala:498)
+	at org.scalaide.core.internal.project.ScalaProject.initializeCompilerSettings(ScalaProject.scala:485)
+	at org.scalaide.core.internal.project.ScalaProject.prepareCompilerSettings(ScalaProject.scala:438)
+	at org.scalaide.core.internal.project.ScalaProject.$anonfun$presentationCompiler$1(ScalaProject.scala:162)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.liftedTree1$1(PresentationCompilerProxy.scala:154)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.create(PresentationCompilerProxy.scala:153)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.initialize(PresentationCompilerProxy.scala:118)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.obtainPc$1(PresentationCompilerProxy.scala:80)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.internal(PresentationCompilerProxy.scala:100)
+	at org.scalaide.ui.internal.editor.decorators.BaseSemanticAction.apply(BaseSemanticAction.scala:139)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.$anonfun$reconciled$3(ScalaSourceFileEditor.scala:105)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:230)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:226)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.$anonfun$reconciled$1(ScalaSourceFileEditor.scala:105)
+	at scala.collection.mutable.ArraySeq.foreach(ArraySeq.scala:74)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.reconciled(ScalaSourceFileEditor.scala:103)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.$anonfun$reconciled$5(ScalaSourceFileEditor.scala:478)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.$anonfun$reconciled$5$adapted(ScalaSourceFileEditor.scala:478)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.reconciled(ScalaSourceFileEditor.scala:478)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor.reconciled(ScalaSourceFileEditor.scala:379)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.$anonfun$handleReconciliation$2(ScalaReconcilingStrategy.scala:65)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.$anonfun$handleReconciliation$2$adapted(ScalaReconcilingStrategy.scala:65)
+	at scala.Option.foreach(Option.scala:257)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.handleReconciliation(ScalaReconcilingStrategy.scala:65)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.reconcile(ScalaReconcilingStrategy.scala:39)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:77)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:69)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+2019-05-05 16:10:14,876 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Error thrown while initializing the presentation compiler.
+Java Model Exception: Java Model Status [server does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:560)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2471)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2202)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2224)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths(ClasspathManagement.scala:149)
+	at org.scalaide.core.internal.project.ClasspathManagement.jdkPaths$(ClasspathManagement.scala:148)
+	at org.scalaide.core.internal.project.ScalaProject.jdkPaths(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath(ClasspathManagement.scala:136)
+	at org.scalaide.core.internal.project.ClasspathManagement.scalaClasspath$(ClasspathManagement.scala:135)
+	at org.scalaide.core.internal.project.ScalaProject.scalaClasspath(ScalaProject.scala:150)
+	at org.scalaide.core.internal.project.ScalaProject.setupCompilerClasspath(ScalaProject.scala:498)
+	at org.scalaide.core.internal.project.ScalaProject.initializeCompilerSettings(ScalaProject.scala:485)
+	at org.scalaide.core.internal.project.ScalaProject.prepareCompilerSettings(ScalaProject.scala:438)
+	at org.scalaide.core.internal.project.ScalaProject.$anonfun$presentationCompiler$1(ScalaProject.scala:162)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.liftedTree1$1(PresentationCompilerProxy.scala:154)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.create(PresentationCompilerProxy.scala:153)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.initialize(PresentationCompilerProxy.scala:118)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.obtainPc$1(PresentationCompilerProxy.scala:80)
+	at org.scalaide.core.internal.compiler.PresentationCompilerProxy.internal(PresentationCompilerProxy.scala:100)
+	at org.scalaide.ui.internal.editor.decorators.BaseSemanticAction.apply(BaseSemanticAction.scala:139)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.$anonfun$reconciled$3(ScalaSourceFileEditor.scala:105)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:230)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:226)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.$anonfun$reconciled$1(ScalaSourceFileEditor.scala:105)
+	at scala.collection.mutable.ArraySeq.foreach(ArraySeq.scala:74)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$$anon$3.reconciled(ScalaSourceFileEditor.scala:103)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.$anonfun$reconciled$5(ScalaSourceFileEditor.scala:478)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.$anonfun$reconciled$5$adapted(ScalaSourceFileEditor.scala:478)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor$ReconcilingListeners.reconciled(ScalaSourceFileEditor.scala:478)
+	at org.scalaide.ui.internal.editor.ScalaSourceFileEditor.reconciled(ScalaSourceFileEditor.scala:379)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.$anonfun$handleReconciliation$2(ScalaReconcilingStrategy.scala:65)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.$anonfun$handleReconciliation$2$adapted(ScalaReconcilingStrategy.scala:65)
+	at scala.Option.foreach(Option.scala:257)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.handleReconciliation(ScalaReconcilingStrategy.scala:65)
+	at org.scalaide.ui.internal.reconciliation.ScalaReconcilingStrategy.reconcile(ScalaReconcilingStrategy.scala:39)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:77)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:69)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+2019-05-05 16:10:27,185  WARN [ModalContext] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:27,186  WARN [ModalContext] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:27,186  WARN [ModalContext] - ScalaProject - Project client has platform default sourceLevel.
+2019-05-05 16:10:27,186  WARN [ModalContext] - ScalaProject - Project client runs on platform default installation.
+2019-05-05 16:10:27,186  WARN [ModalContext] - ScalaProject - Project client has platform default sourceLevel.
+2019-05-05 16:10:27,186  WARN [ModalContext] - ScalaProject - Project client runs on platform default installation.
+2019-05-05 16:10:27,501  WARN [ModalContext] - ScalaProject - Project client has platform default sourceLevel.
+2019-05-05 16:10:27,501  WARN [ModalContext] - ScalaProject - Project client runs on platform default installation.
+2019-05-05 16:10:27,653  WARN [ModalContext] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:27,653  WARN [ModalContext] - ScalaProject - Project server runs on platform default installation.
+2019-05-05 16:10:27,785  WARN [Worker-0] - ScalaProject - Project server has platform default sourceLevel.
+2019-05-05 16:10:27,785  WARN [Worker-0] - ScalaProject - Project server runs on platform default installation.
+2019-05-06 13:28:18,863  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 13:28:18,864  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 13:28:24,450  WARN [Worker-0] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 13:28:24,451  WARN [Worker-0] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 13:28:24,531  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-06 13:28:24,535  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-05-06 16:07:19,969  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:07:19,969  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 16:07:23,392  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for client, setting default to 2.12.
+2019-05-06 16:07:23,414  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for client, setting default to 2.12.
+2019-05-06 16:07:24,422  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:07:24,422  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 16:07:24,453  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:07:24,454  WARN [Worker-5] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 16:26:11,590  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:26:11,590  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 16:26:15,001  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-06 16:26:15,016  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-05-06 16:27:58,373  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:27:58,373  WARN [main] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 16:39:23,208  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:39:23,209  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-06 16:39:23,214  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-06 16:39:23,214  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
