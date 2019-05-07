@@ -42,6 +42,8 @@ object CanvasDrawing {
         context.fillRect(20,20,150,100);
       }
     }
+
+    
     
    def attack(): Unit = {
      
