@@ -27,11 +27,15 @@ object CanvasDrawing {
     
     //test health
     private var enHealth = 30;
-    private var playerHealth = 40;
+    private var pHealth = 40;
     
     //test speed
     private var enSpeed = 30;
     private var pSpeed = 40;
+    
+    //test damage
+    private var pDamage = 10;
+    private var enDamage = 5;
     
     private val glitch = dom.document.getElementById("glitch")
 
@@ -61,10 +65,16 @@ object CanvasDrawing {
         context.font = "30px Arial";
         context.fillText("Item", 220, 375);
         
+      //ui divider line  
         context.beginPath();
         context.moveTo(20,325);
         context.lineTo(780,325);
         context.stroke();
+        
+      //player health
+        context.font = "20px Arial";
+        context.fillText("Player Health: " + pHealth, 40, 50);
+        
         
         drawEnemy();
         
@@ -72,7 +82,7 @@ object CanvasDrawing {
         
     }
     
-    def drawEnemy() : Unit = {
+    def drawEnemyInitial() : Unit = {
       context.drawImage(glitch, 350,100,96,96);
       
       if(enSpeed < pSpeed){
@@ -83,7 +93,21 @@ object CanvasDrawing {
       
       context.clearRect(560,30,215,50); 
       context.font = "20px Arial";
-      context.fillText("Enemy Health " + enHealth, 600, 50);
+      context.fillText("Enemy Health: " + enHealth, 600, 50);
+    }
+    
+    def drawEnemy() : Unit = {
+      context.drawImage(glitch, 350,100,96,96);
+      
+      context.clearRect(560,30,215,50); 
+      context.font = "20px Arial";
+      context.fillText("Enemy Health: " + enHealth, 600, 50);
+    }
+    
+    def drawZeroHealth() : Unit = {
+      context.clearRect(560,30,215,50); 
+      context.font = "20px Arial";
+      context.fillText("Enemy Health: " + enHealth, 600, 50);
     }
     
     def hurtEnemy(): Unit = {
@@ -94,12 +118,28 @@ object CanvasDrawing {
         enHealth = 0;
         context.clearRect(350,100,96,96);
       }
+      hasAttacked = true;
     }
     
-    def drawZeroHealth() : Unit = {
-      context.clearRect(560,30,215,50); 
+    def enemyAttack() : Unit = {
+      pHealth -= enDamage;
+      
+      context.clearRect(40,25,200,50);
       context.font = "20px Arial";
-      context.fillText("Enemy Health " + enHealth, 600, 50);
+      context.fillText("Player Health: " + pHealth, 40, 50);
+      hasAttacked = false;
+    }
+    
+    def displayDamageDealt() : Unit = {
+      context.font = "35px Arial";
+      context.fillText("Damage Dealt: " + pDamage, 376, 375);
+      setTimeout(1500)(context.clearRect(330, 339, 436, 60));
+    }
+    
+    def displayDamageReceived() : Unit = {
+      context.font = "35px Arial";
+      context.fillText("Damage Received: " + enDamage, 376, 375);
+      setTimeout(1500)(context.clearRect(330, 339, 436, 60));
     }
     
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
@@ -109,10 +149,13 @@ object CanvasDrawing {
       println(s"x: ${coords._1}, y: ${coords._2}")
       
       //if attack is pressed and if button is showing
-      if(((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){       
-       //if(((e.clientX > 45) && (e.clientX < 170)) && (e.clientY  > 342) && (e.clientY < 392) && arenaExists == true){ 
-        if(enHealth > 0 && hasAttacked == false){
+      if(((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){             
+        if(enHealth > 0 && hasAttacked != true){
+          println("should attack");
           attack();
+          displayDamageDealt();
+          setTimeout(1500)(enemyAttack());
+          setTimeout(2000)(displayDamageReceived());
         }
         println(enHealth);
         if(enHealth > 0){
@@ -139,8 +182,6 @@ object CanvasDrawing {
      setTimeout(500)(clearAnimation);
      
      hurtEnemy();
-     hasAttacked = true;
-     println(hasAttacked);
    }
    
    def clearAnimation(): Unit = {
