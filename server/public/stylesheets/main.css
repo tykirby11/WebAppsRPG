@@ -134,10 +134,14 @@
 
 }
 
-#game{
+#gameCanvas{
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
 }	
+
+#game-container{
+}
 	
 }
 @import url('https://fonts.googleapis.com/css?family=MedievalSharp');

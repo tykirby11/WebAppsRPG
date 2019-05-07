@@ -91,7 +91,7 @@ object CanvasDrawing {
       println(s"x: ${coords._1}, y: ${coords._2}")
       
       //if attack is pressed and if button is showing
-      if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 454 && e.clientY < 505) && arenaExists == true){       
+      if((e.clientX > 600 && e.clientX < 725) && (e.clientY > 455 && e.clientY < 505) && arenaExists == true){       
         if(enHealth > 0){
           attack();
         }
