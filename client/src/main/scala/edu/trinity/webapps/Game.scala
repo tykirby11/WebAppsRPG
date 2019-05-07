@@ -75,6 +75,8 @@ object CanvasDrawing {
         setTimeout(550)(drawEnemy());
       }
     }
+
+    
     
    def attack(): Unit = {
      setTimeout(250)(context.drawImage(slice1,400,100,26,110));
