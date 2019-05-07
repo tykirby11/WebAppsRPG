@@ -1,16 +1,55 @@
-@* gamePage Template File *@
 @(param: Any)
 
 @main("Heroes of the Code Block"){
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
 
 	<div id = "game-container">
 
-		<h2>Heroes of the Code Block</h2>
+		<h2 id="game-header">Heroes of the Code Block</h2>
 	
-		<h3>How Long Can You Last in Scalandia?</h3>
-		
-		<div id="game" style="width:800px;height:500px;border:1px solid #000;">Place Game Here :-)</div>
+		<h3 id="game-sub-header">How Long Can You Last in Scalandia?</h3>
+
+
+<canvas id="gameCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
+    @scalajs.html.scripts("csci3345-s19-client-rpg", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+
+
+	</div>
+	
+
+  
+	<div id="wrapper">
+    
+    <div id="shop">
+    
+    <h2> <u> _____________SHOP______________ </u> </h2>
+    
+    <div id ="col">
+    <button class ="shopButtons"id="upgrade">Upgrade Sword</button>
+    <button class ="shopButtons" >Health</button>
+    <button class ="shopButtons">Trap</button>
+    <button class ="shopButtons">Bomb Sword</button>
+    <button class ="shopButtons">Your Mom</button>
+	
 	
 	</div>
+
+  </div>
+	
+	</div>
+	
+	@* this is how you import a image *@
+	@*<img id= "slice" style = "display: none" src ="@routes.Assets.at("images/slice.gif")"/> *@
+	<img id= "slice1" style = "display: none" src ="@routes.Assets.at("images/slice1.png")"/>
+	<img id= "slice2" style = "display: none" src ="@routes.Assets.at("images/slice2.png")"/>
+	<img id= "slice3" style = "display: none" src ="@routes.Assets.at("images/slice3.png")"/>
+	<img id= "slice4" style = "display: none" src ="@routes.Assets.at("images/slice4.png")"/>
+	<img id= "slice5" style = "display: none" src ="@routes.Assets.at("images/slice5.png")"/>
+	<img id= "slice6" style = "display: none" src ="@routes.Assets.at("images/slice6.png")"/>
+	<img id= "glitch" style = "display: none" src ="@routes.Assets.at("images/glitch_gremlin.png")"/>
+	<img id= "mapBackground" style = "display: none" src ="@routes.Assets.at("images/darkforkintheroad.jpg")"/>
 	
 }

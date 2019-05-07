@@ -24,6 +24,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	margin-top: 100px
 }
 
 #gloss-body{
@@ -53,6 +54,25 @@
 	text-align: center;
 }
 
+#test{
+	
+}
+
+.tabcontent{
+	margin: 3em;
+	border: 2px black solid;
+		
+	padding: 0em;
+	
+	background-color:rgba(0,255,255,0.2);
+	overflow:auto;
+
+	
+	
+}
+
+
+
 #categories{
 	margin: 3em;
 	border: 2px black solid;
@@ -60,30 +80,9 @@
 	padding: 0em;
 	
 	background-color:rgba(0,255,255,0.2);
-}
-
-#categories ul{
-	background-color:rgba(255,255,0,.2);
-	
-	display: flex;
-	list-style-type:none;
-	flex-direction:column;
-	padding-left: 0em;
 	
 }
 
-#categories ul li{
-	border-top: 2px black solid;
-	
-	
-	padding: 1em;
-	flex-grow: 1;
-	text-align: center;
-}
-
-#categories ul li:last-child{
-	border-bottom: 2px black solid;
-}
 
 #lead-container button{
 	margin-left:55em;
@@ -135,9 +134,249 @@
 
 }
 
-#game{
+#gameCanvas{
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
 }	
+
+#game-container{
+}
 	
 }
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-image: url(http://d289qh4hsbjjw7.cloudfront.net/rpgmaker-20130522223546811/files/left-tokiwa-graphics-battle-bg1.jpg);
+  display: flex;
+  top: 0;
+  background-size: cover;
+}
+
+.content {
+  width: 600px;
+  height: 480px;
+  margin: auto;
+  border-style: double;
+  border-color: white;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: rgba(128, 128, 128, 0.6);
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+#mainTitle {
+  font-family: "MedievalSharp", sans-serif;
+  font-size: 80px;
+  color: white;
+  margin-bottom: -10px;
+}
+
+#secondTitle {
+  font-family: "MedievalSharp", sans-serif;
+  font-size: 46px;
+  color: white;
+}
+
+.menuTable {
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  text-align: center;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.menuTable td {
+  padding: 8px;
+}
+
+.menuTable a {
+  text-decoration: none;
+  color: white;
+}
+
+.menuTable a:hover {
+  font-size: 26px;
+}
+
+.menuTable img {
+  height: 32px;
+  width: 26px;
+  vertical-align: middle;
+}
+
+
+
+#shop {
+  float: right;
+  border-radius: 10px 10px 10px 10px;
+  background: rgb(160,82,45);
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  padding: 0px;
+  /* box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); */
+  text-align: center;
+}
+
+#col {
+  column-count:2;
+  	
+}
+
+
+
+.shopButtons {
+  background-color: rgb(169,169,169);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  width:220px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 20px 12px;
+  white-space:nowrap;
+  
+
+}
+
+.shopButtons:hover  {
+  background-color: rgb(128,128,128);
+}
+
+.tablinks {
+  background-color: rgb(169,169,169);
+  border: none;
+  color: white;
+  padding: 5px 40px;
+  width:220px;
+  border-radius: 5pul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}x 5px 5px 5px;ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+  margin: 5px 10px 7px 12px;
+  white-space:nowrap;
+  
+}
+.itemButtons{
+  background-color: rgb(169,169,169);
+  border: none;
+  color: white;
+  padding: 5px 40px;
+  width:220px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 10px 7px 12px;
+  white-space:nowrap;
+}
+
+.tablinks:hover  {
+  background-color: rgb(128,128,128);
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+#gameCanvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+}
+
+#game-header #game-sub-header {
+	text-align: center
+}
+
+
+

@@ -11,8 +11,6 @@ import play.api.data.Forms._
 @Singleton
 class LoginController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
 
-   
-
 
    def login = Action { implicit request =>
     Ok(views.html.login())

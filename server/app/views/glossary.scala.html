@@ -1,7 +1,21 @@
 @* glossary Template File *@
+
+
 @(param: Any)
 
 @main("Glossary"){
+<head>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+</head>
+
+
+
+	
 	<div id = "glossary-container">
 		
 		<div id ="gloss-flex-head">
@@ -14,31 +28,63 @@
 			</div>
 		
 		</div>
+
 		
 		<div id = "gloss-body">
 		
-			<div id = "categories">
+		
+	<div id = "categories">
 			
-				<ul>
-				
-					<li>Enemies</li>
-					<li>Items</li>
-					<li>Stats</li>
-				
-				</ul>
+		<div id ="tab">
+		<button class = "tablinks" onclick = "switchTabs(event, 'allItems')" id = "defaultOpen">All</button>
+			<br>
+		<button class = "tablinks" onclick = "switchTabs(event, 'items')">Items</button>
+			<br>
+		<button class = "tablinks" onclick = "switchTabs(event, 'weapons')">Weapons</button>
+			<br>
+		<button class = "tablinks" onclick = "switchTabs(event, 'characters')">Characters</button>
+			<br>
+		<button class = "tablinks" onclick = "switchTabs(event, 'enemies')">Enemies</button>
+			<br>
+		<button class = "tablinks" onclick = "switchTabs(event, 'bosses')">Bosses</button>
+	
+		
+		</div>
+	</div>
 			
+	<div id = "allItems" class="tabcontent">
+			<div >	
+					<button id = "tank" class ="itemButtons" >Tank </button>
+						<br>
+					<button id = "warrior" class ="itemButtons">Warrior</button>
+						<br>
+					<button id = "rouge" class ="itemButtons">Rouge</button>
 			</div>
+
+				</div>
+				
+				<div id = "characters" class = "tabcontent">
+					<button id = "tank" class ="itemButtons" >Tank </button>
+						<br>
+					<button id = "warrior" class ="itemButtons">Warrior</button>
+						<br>
+					<button id = "rouge" class ="itemButtons">Rouge</button>
+				
+				</div>
+
+
+				
+							
 			
 			<div id = "profile">
 			
 				<!-- insert image here -->
 			
-				<h3>Character Name</h3>
+				<h3 id = "characterName"></h3>
 				
-				<p>Attack: -- </p>
-				<p>Defense: -- </p>
-				<p>Special Attack: -- </p>
-				<p>Special Defense: -- </p>
+				<p id = "attack"></p>
+				<p id= "hp"> </p>
+				<p id = "speed"> </p>
 				<br>
 				<ul>Attacks</ul>
 					<li>Blunt: -- </li>
@@ -49,4 +95,7 @@
 		</div>	
 		
 	</div>
+	
+		<script src="@routes.Assets.versioned("javascript/GloassaryPagefunctions.js")"></script>
+	
 }

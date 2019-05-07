@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;server&apos;" deleteContents="false" description="Delete resource &apos;server&apos;" element1="/server" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557258936649"/>&#x0A;<refactoring comment="Delete resource &apos;client&apos;" deleteContents="false" description="Delete resource &apos;client&apos;" element1="/client" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557258942851"/>&#x0A;<refactoring comment="Delete resource &apos;CSCI3345-S19-Shared-RPG&apos;" deleteContents="false" description="Delete resource &apos;CSCI3345-S19-Shared-RPG&apos;" element1="/CSCI3345-S19-Shared-RPG" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557259018642"/>
+=======
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;client&apos;" deleteContents="false" description="Delete resource &apos;client&apos;" element1="/client" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557090610394"/>&#x0A;<refactoring comment="Delete resource &apos;server&apos;" deleteContents="false" description="Delete resource &apos;server&apos;" element1="/server" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1557090614114"/>
+>>>>>>> 06a36d7759450e83f77612774afb6e5b5383cbe3
 </session>

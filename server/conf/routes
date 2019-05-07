@@ -2,8 +2,12 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET        /                             edu.trinity.webapps.controllers.Application.index
+# Main Menu
+GET        /                        controllers.mainMenuController.mainmenu
+GET        /game                         controllers.mainMenuController.game
+GET		   /glossary				controllers.mainMenuController.glossary
+GET		   /leaderboard 			controllers.mainMenuController.leaderboard
+
 
 
 GET	   /login						 controllers.LoginController.login
