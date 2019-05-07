@@ -19,17 +19,13 @@ object CanvasDrawing {
     private val slice4 = dom.document.getElementById("slice4")
     private val slice5 = dom.document.getElementById("slice5")
     private val slice6 = dom.document.getElementById("slice6")
+    
+    private val glitch = dom.document.getElementById("glitch")
 
     private val bw = 125
     private val bh = 50
 
     private var arenaExists = false;
-    
-    //var slice1:dom.raw.HTMLImageElement = new HTMLImageElement()
-    //var slice1 = dom.document.createElement("img").asInstanceOf[HTMLImageElement]
-    //slice1.src = "images/slice1.png"
-    
-    
     
     def drawArena(): Unit = {
       //battle window
@@ -37,37 +33,34 @@ object CanvasDrawing {
         context.stroke();
         
       //user area
-        //context.globalAlpha = 0.4;
         context.rect(20,325, 760,85);
         context.stroke();
-        //context.globalAlpha = 1.0;
         
       //attack button
-        //context.fillStyle = "#FFFFFF";
         context.rect(45,340,bw,bh);
         context.stroke();
-        //context.fillStyle = "#000000";
         context.font = "30px Arial";
         context.fillText("Attack",65,375);
-        //drawBorder(45, 340, bw, bh);
         
       //item button
-        //context.fillStyle = "#FFFFFF";
         context.rect(190,340,bw,bh);
         context.stroke();
-        //context.fillStyle = "#000000";
         context.font = "30px Arial";
         context.fillText("Item", 220, 375);
-        //drawBorder(45,340, bw, bh);
         
         context.beginPath();
         context.moveTo(20,325);
         context.lineTo(780,325);
         context.stroke();
         
+        drawEnemy()
+        
         arenaExists = true;
         
-        
+    }
+    
+    def drawEnemy() : Unit = {
+      context.drawImage(glitch, 350,100,96,96);
     }
     
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
@@ -79,11 +72,11 @@ object CanvasDrawing {
       //if attack is pressed and if button is showing
       if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 461 && e.clientY < 505) && arenaExists == true){
         attack();
+        setTimeout(550)(drawEnemy());
       }
     }
     
    def attack(): Unit = {
-     var time = 0;
      setTimeout(250)(context.drawImage(slice1,400,100,26,110));
      setTimeout(250)(clearAnimation);
      setTimeout(250)(context.drawImage(slice2,400,100,26,110));
