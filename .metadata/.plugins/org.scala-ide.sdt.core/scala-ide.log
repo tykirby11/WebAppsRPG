@@ -326,3 +326,9 @@ Java Model Exception: Java Model Status [server does not exist]
 2019-05-06 16:39:23,209  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
 2019-05-06 16:39:23,214  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
 2019-05-06 16:39:23,214  WARN [Worker-10] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-07 11:33:46,530  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized for server, setting default to 2.12.
+2019-05-07 11:33:46,533  WARN [Worker-3] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-07 11:33:46,534  WARN [Worker-3] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
+2019-05-07 11:33:46,544  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized for server, setting default to 2.12.
+2019-05-07 11:34:40,303  WARN [Worker-2] - ScalaProject - Project CSCI3345-S19-Shared-RPG has platform default sourceLevel.
+2019-05-07 11:34:40,304  WARN [Worker-2] - ScalaProject - Project CSCI3345-S19-Shared-RPG runs on platform default installation.
