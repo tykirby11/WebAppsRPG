@@ -21,7 +21,18 @@ object CanvasDrawing {
     private val slice6 = dom.document.getElementById("slice6")
     
     //test battle system
+    
+    //boolean to see if player has attacked
+    private var hasAttacked = false;
+    
+    //test health
     private var enHealth = 30;
+    private var playerHealth = 40;
+    
+    //test speed
+    private var enSpeed = 30;
+    private var pSpeed = 40;
+    
     private val glitch = dom.document.getElementById("glitch")
 
     private val bw = 125
@@ -64,12 +75,19 @@ object CanvasDrawing {
     def drawEnemy() : Unit = {
       context.drawImage(glitch, 350,100,96,96);
       
+      if(enSpeed < pSpeed){
+        hasAttacked = false;
+      } else {
+        hasAttacked = true;
+      }
+      
       context.clearRect(560,30,215,50); 
       context.font = "20px Arial";
       context.fillText("Enemy Health " + enHealth, 600, 50);
     }
     
     def hurtEnemy(): Unit = {
+      //test player damage
       enHealth -= 10;
       
       if (enHealth <= 0){
@@ -85,14 +103,15 @@ object CanvasDrawing {
     }
     
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
-    dom.document.onmousedown = (e: dom.MouseEvent) => {
-      val coords = (e.clientX, e.clientY)
+    canvas.onmousedown = (e: dom.MouseEvent) => {
+      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
       
       println(s"x: ${coords._1}, y: ${coords._2}")
       
       //if attack is pressed and if button is showing
-      if((e.clientX > 600 && e.clientX < 725) && (e.clientY > 455 && e.clientY < 505) && arenaExists == true){       
-        if(enHealth > 0){
+      if(((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){       
+       //if(((e.clientX > 45) && (e.clientX < 170)) && (e.clientY  > 342) && (e.clientY < 392) && arenaExists == true){ 
+        if(enHealth > 0 && hasAttacked == false){
           attack();
         }
         println(enHealth);
@@ -120,6 +139,8 @@ object CanvasDrawing {
      setTimeout(500)(clearAnimation);
      
      hurtEnemy();
+     hasAttacked = true;
+     println(hasAttacked);
    }
    
    def clearAnimation(): Unit = {

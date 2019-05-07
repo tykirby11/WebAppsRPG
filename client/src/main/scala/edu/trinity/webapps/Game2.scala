@@ -6,7 +6,7 @@ import org.scalajs.dom.raw._
 import org.scalajs.dom.raw.HTMLImageElement
 import scala.scalajs.js.timers._
 
-object CanvasDrawing {
+object CanvasDrawing2 {
 
   private val canvas = dom.document.getElementById("gameCanvas").asInstanceOf[dom.raw.HTMLCanvasElement]
   private val context = canvas.getContext("2d")
