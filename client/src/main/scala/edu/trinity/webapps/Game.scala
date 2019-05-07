@@ -64,12 +64,22 @@ object CanvasDrawing {
         context.stroke();
         context.font = "30px Arial";
         context.fillText("Item", 220, 375);
+      
+      //health divider
+        context.beginPath();
+        context.moveTo(20,85);
+        context.lineTo(780,85);
+        context.stroke();
         
       //ui divider line  
         context.beginPath();
         context.moveTo(20,325);
         context.lineTo(780,325);
         context.stroke();
+        
+      //Boss Name
+        context.font = "30px Arial"
+        context.fillText("GLITCH GREMLIN", 255, 60);
         
       //player health
         context.font = "20px Arial";
@@ -83,7 +93,7 @@ object CanvasDrawing {
     }
     
     def drawEnemyInitial() : Unit = {
-      context.drawImage(glitch, 350,100,96,96);
+      context.drawImage(glitch, 300,100,192,192);
       
       if(enSpeed < pSpeed){
         hasAttacked = false;
@@ -97,7 +107,7 @@ object CanvasDrawing {
     }
     
     def drawEnemy() : Unit = {
-      context.drawImage(glitch, 350,100,96,96);
+      context.drawImage(glitch, 300,100,192,192);
       
       context.clearRect(560,30,215,50); 
       context.font = "20px Arial";
@@ -112,11 +122,11 @@ object CanvasDrawing {
     
     def hurtEnemy(): Unit = {
       //test player damage
-      enHealth -= 10;
+      enHealth -= pDamage;
       
       if (enHealth <= 0){
         enHealth = 0;
-        context.clearRect(350,100,96,96);
+        context.clearRect(300,100,192,192);
       }
       hasAttacked = true;
     }
@@ -168,24 +178,24 @@ object CanvasDrawing {
 
     
    def attack(): Unit = {
-     setTimeout(250)(context.drawImage(slice1,400,100,26,110));
+     setTimeout(250)(context.drawImage(slice1,400,150,26,110));
      setTimeout(250)(clearAnimation);
-     setTimeout(250)(context.drawImage(slice2,400,100,26,110));
+     setTimeout(250)(context.drawImage(slice2,400,150,26,110));
      setTimeout(300)(clearAnimation);
-     setTimeout(300)(context.drawImage(slice3,400,100,26,110));
+     setTimeout(300)(context.drawImage(slice3,400,150,26,110));
      setTimeout(350)(clearAnimation);
-     setTimeout(350)(context.drawImage(slice4,400,100,26,110));
+     setTimeout(350)(context.drawImage(slice4,400,150,26,110));
      setTimeout(400)(clearAnimation);
-     setTimeout(400)(context.drawImage(slice5,400,100,26,110));
+     setTimeout(400)(context.drawImage(slice5,400,150,26,110));
      setTimeout(450)(clearAnimation);
-     setTimeout(450)(context.drawImage(slice6,400,100,26,110));
+     setTimeout(450)(context.drawImage(slice6,400,150,26,110));
      setTimeout(500)(clearAnimation);
      
      hurtEnemy();
    }
    
    def clearAnimation(): Unit = {
-     context.clearRect(400,100,26,110);
+     context.clearRect(400,150,26,110);
    }
    
    def drawBorder(xPos: Int, yPos: Int,width: Int,height: Int,thickness: Int = 1) : Unit = {
