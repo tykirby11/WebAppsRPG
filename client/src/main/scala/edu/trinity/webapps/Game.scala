@@ -20,6 +20,8 @@ object CanvasDrawing {
     private val slice5 = dom.document.getElementById("slice5")
     private val slice6 = dom.document.getElementById("slice6")
     
+    //test battle system
+    private var enHealth = 30;
     private val glitch = dom.document.getElementById("glitch")
 
     private val bw = 125
@@ -53,7 +55,7 @@ object CanvasDrawing {
         context.lineTo(780,325);
         context.stroke();
         
-        drawEnemy()
+        drawEnemy();
         
         arenaExists = true;
         
@@ -61,6 +63,25 @@ object CanvasDrawing {
     
     def drawEnemy() : Unit = {
       context.drawImage(glitch, 350,100,96,96);
+      
+      context.clearRect(560,30,215,50); 
+      context.font = "20px Arial";
+      context.fillText("Enemy Health " + enHealth, 600, 50);
+    }
+    
+    def hurtEnemy(): Unit = {
+      enHealth -= 10;
+      
+      if (enHealth <= 0){
+        enHealth = 0;
+        context.clearRect(350,100,96,96);
+      }
+    }
+    
+    def drawZeroHealth() : Unit = {
+      context.clearRect(560,30,215,50); 
+      context.font = "20px Arial";
+      context.fillText("Enemy Health " + enHealth, 600, 50);
     }
     
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
@@ -70,13 +91,19 @@ object CanvasDrawing {
       println(s"x: ${coords._1}, y: ${coords._2}")
       
       //if attack is pressed and if button is showing
-      if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 454 && e.clientY < 505) && arenaExists == true){
-        attack();
-        setTimeout(550)(drawEnemy());
+      if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 454 && e.clientY < 505) && arenaExists == true){       
+        if(enHealth > 0){
+          attack();
+        }
+        println(enHealth);
+        if(enHealth > 0){
+          setTimeout(550)(drawEnemy());
+        } else {
+          drawZeroHealth();
+        }
       }
     }
 
-    
     
    def attack(): Unit = {
      setTimeout(250)(context.drawImage(slice1,400,100,26,110));
@@ -91,6 +118,8 @@ object CanvasDrawing {
      setTimeout(450)(clearAnimation);
      setTimeout(450)(context.drawImage(slice6,400,100,26,110));
      setTimeout(500)(clearAnimation);
+     
+     hurtEnemy();
    }
    
    def clearAnimation(): Unit = {
