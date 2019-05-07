@@ -23,7 +23,5 @@ class mainMenuController @Inject()(cc: ControllerComponents) extends AbstractCon
     
     def leaderboard = Action { implicit request =>
     Ok(views.html.leaderboards())
-  }
-  
-  
+  }  
 }

@@ -6,7 +6,9 @@ import org.scalajs.dom
 object ScalaJSExample {
 
   def main(args: Array[String]): Unit = {
-    if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawArena()
+    dom.window.onload = (e: dom.raw.Event) => {
+      if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawArena()
+    }
   }
   
   case class NotAString(i: Int, s: String)

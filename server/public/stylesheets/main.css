@@ -368,5 +368,15 @@ li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
+#gameCanvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+}
+
+#game-header #game-sub-header {
+	text-align: center
+}
+
 
 
