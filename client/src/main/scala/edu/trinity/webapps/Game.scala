@@ -70,7 +70,7 @@ object CanvasDrawing {
       println(s"x: ${coords._1}, y: ${coords._2}")
       
       //if attack is pressed and if button is showing
-      if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 461 && e.clientY < 505) && arenaExists == true){
+      if((e.clientX > 55 && e.clientX < 180) && (e.clientY > 454 && e.clientY < 505) && arenaExists == true){
         attack();
         setTimeout(550)(drawEnemy());
       }
