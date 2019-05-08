@@ -9,29 +9,35 @@ import scala.scalajs.js.timers._
 object CanvasMapDrawing {
 
   private val canvas = dom.document.getElementById("gameCanvas").asInstanceOf[dom.raw.HTMLCanvasElement]
-  private val context = canvas.getContext("2d")
+  private val context = canvas.getContext("2d") 
+  
+  private var eventTriggered = false
 
-  //handling user input
+  def drawMap(): Unit = {
+    
+    //handling user input for map
     dom.document.onmousedown = (e: dom.MouseEvent) => {
     val coords = (e.clientX, e.clientY)
       
     println(s"x: ${coords._1}, y: ${coords._2}")
       
     //if left node is pressed, trigger event
-    if((e.clientX > 289 && e.clientX < 463) && (e.clientY > 380 && e.clientY < 454))
+    if((e.clientX > 728 && e.clientX < 904) && (e.clientY > 454 && e.clientY < 529))
       {
       println("clicked left node, this should do something!")
       println("Enemy Encounter triggered")
-      CanvasDrawing.drawArena()
       }
     //if right node is pressed, trigger event 
-    else if ((e.clientX > 589 && e.clientX < 764) && (e.clientY > 380 && e.clientY < 453))
+    else if ((e.clientX > 1030 && e.clientX < 1204) && (e.clientY > 454 && e.clientY < 529))
       {
       println("clicked right node, this should do something!")
+      CanvasMapDrawing.drawEvent()
+      eventTriggered = true
       }
     }  
-  
-  def drawMap(): Unit = {
+    
+    //clear canvas before drawing out map
+    context.clearRect(0, 0, canvas.width, canvas.height)
     
     //background image for map view
     val mapBackground = dom.document.getElementById("mapBackground")
@@ -59,5 +65,30 @@ object CanvasMapDrawing {
     
     //gold
     context.fillText("Gold: 100", 30, 30)
+  }
+  
+  def drawEvent(): Unit = {
+    
+    //handling user input for an event
+    dom.document.onmousedown = (e: dom.MouseEvent) => {
+    val coords = (e.clientX, e.clientY)
+      
+    println(s"x: ${coords._1}, y: ${coords._2}")
+      
+    //if continue area is pressed, trigger event
+    if((e.clientX > 789 && e.clientX < 1013) && (e.clientY > 613 && e.clientY < 658))
+      {
+      println("clicked continue, this should return you to map!")
+      CanvasMapDrawing.drawMap()
+      }
+    }
+    
+    //clear out map area for event
+    context.clearRect(0, 0, canvas.width, canvas.height)
+    val eventBackground = dom.document.getElementById("eventBackground")
+    context.drawImage(eventBackground, 0, 0, canvas.width, canvas.height)
+    context.fillText("You've Found a Lost Treasure Chest", 250, 120)
+    context.fillText("Gold +50!", 250, 285)
+    context.fillText("Click Here to Continue", 250, 430)
   }
 }
