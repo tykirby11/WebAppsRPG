@@ -7,7 +7,7 @@ object ScalaJSExample {
 
   def main(args: Array[String]): Unit = {
     dom.window.onload = (e: dom.raw.Event) => {
-      if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawArena()
+      if(dom.document.getElementById("gameCanvas") != null) CanvasMapDrawing.drawMap()//CanvasDrawing.drawArena()
     }
   }
   
