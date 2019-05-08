@@ -20,6 +20,8 @@ object CanvasDrawing {
     private val slice5 = dom.document.getElementById("slice5")
     private val slice6 = dom.document.getElementById("slice6")
     
+    private var gold = 100;
+    
     //test battle system
     
     //boolean to see if player has attacked
@@ -141,15 +143,19 @@ object CanvasDrawing {
     }
     
     def displayDamageDealt() : Unit = {
-      context.font = "35px Arial";
-      context.fillText("Damage Dealt: " + pDamage, 376, 375);
-      setTimeout(1500)(context.clearRect(330, 339, 436, 60));
+      context.font = "25px Arial";
+      context.fillText("Damage Dealt: " + pDamage, 376, 360);
+      //context.rect(330,337,436,30);
+      //context.stroke();
+      setTimeout(1500)(context.clearRect(330, 337, 436, 30));
     }
     
     def displayDamageReceived() : Unit = {
-      context.font = "35px Arial";
-      context.fillText("Damage Received: " + enDamage, 376, 375);
-      setTimeout(1500)(context.clearRect(330, 339, 436, 60));
+      context.font = "25px Arial";
+      context.fillText("Damage Received: " + enDamage, 376, 400);
+      //context.rect(330,377,436,30);
+      //context.stroke();
+      setTimeout(1500)(context.clearRect(330, 377, 436, 30));
     }
     
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
@@ -161,13 +167,11 @@ object CanvasDrawing {
       //if attack is pressed and if button is showing
       if(((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){             
         if(enHealth > 0 && hasAttacked != true){
-          println("should attack");
           attack();
           displayDamageDealt();
           setTimeout(1500)(enemyAttack());
           setTimeout(2000)(displayDamageReceived());
         }
-        println(enHealth);
         if(enHealth > 0){
           setTimeout(550)(drawEnemy());
         } else {

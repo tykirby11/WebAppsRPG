@@ -222,42 +222,13 @@ h1 {
   vertical-align: middle;
 }
 
-
-
-#shop {
-  float: right;
-  border-radius: 10px 10px 10px 10px;
-  background: rgb(160,82,45);
-  padding: 30px;
-  width: 90%;
-  max-width: 500px;
-  padding: 0px;
-  /* box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); */
-  text-align: center;
+#shop{
+	width: 45%;
+	background-color: rgba(255,0,0,.3);
 }
 
-#col {
-  column-count:2;
-  	
-}
-
-
-
-.shopButtons {
-  background-color: rgb(169,169,169);
-  border: none;
-  color: white;
-  padding: 15px 40px;
-  width:220px;
-  border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 20px 12px;
-  white-space:nowrap;
-  
-
-}
-
-.shopButtons:hover  {
-  background-color: rgb(128,128,128);
+#shop h2{
+	text-align: center;
 }
 
 .tablinks {
@@ -339,6 +310,62 @@ li a:hover:not(.active) {
 }
 
 
+
+#gameCanvas{
+	background-color: white;
+}
+
+#gamePageContainer{
+	overflow-x: hidden;
+	background-color: #FB9F89;
+	width:100%;
+	height:auto;
+  	bottom:0px;
+  	top:0px;
+  	left:0px;
+  	right:0px;
+  	position:absolute;
+}
+
+#shop{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	
+	background-color: #1E1E24;
+	
+	font-family: Helvetica, Sans-Serif;
+	color: white;
+}
+
+#shop h2{
+	padding-top: 1em;
+}
+
+.shopHeader{
+	background-color: #C4AF9A;
+}
+
+#shop h3{
+	text-align: center;
+}
+
+#shop-inner{
+	margin-left:auto;
+	margin-right: auto;
+	
+	background-color: #81AE9D;
+}
+
+#consumables{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#equipment{
+	margin-left:auto;
+	margin-right:auto;
+}
 
 ul {
   list-style-type: none;
