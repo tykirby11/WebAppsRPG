@@ -22,6 +22,10 @@ extends AbstractController(cc) with HasDatabaseConfigProvider[JdbcProfile] {
       
         val user = args("username").head
         val pass = args("password").head
+        
+        println(user)
+        println(pass)
+        
         val resultFuture = models.DBQueries.verifyLogin(user, pass, db)
         resultFuture.map(result =>
         if(result){
@@ -35,6 +39,7 @@ extends AbstractController(cc) with HasDatabaseConfigProvider[JdbcProfile] {
   }
    
   def loginPage = Action {
+    println("Got here PAGE")
     Ok(views.html.login())
   }
   
@@ -47,11 +52,15 @@ extends AbstractController(cc) with HasDatabaseConfigProvider[JdbcProfile] {
   }
   
   def createUser = Action.async { implicit request =>
+    println("Got here CREATE")
     val postBody = request.body.asFormUrlEncoded
+    println("Got here CREATE BODY " + postBody)
     postBody.map { args =>
       
-        val user = args("username").head
-        val pass = args("password").head
+      
+        val user = args("usernameC").head
+        val pass = args("passwordC").head
+        
         models.DBQueries.addLoginInfo(user, pass, db)
         Future.successful(Redirect(routes.LoginController.loginPage))
       

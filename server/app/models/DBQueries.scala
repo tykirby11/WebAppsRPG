@@ -7,6 +7,7 @@ import Tables._
 
 object DBQueries {
   def verifyLogin(username: String, password: String, db: Database)(implicit ec: ExecutionContext): Future[Boolean] = {
+    println("Got here VERIFY")
     db.run {
       (for (u <- User; if u.password === password && u.username === username) yield {
         u.id
@@ -15,6 +16,7 @@ object DBQueries {
   }
   
   def addLoginInfo(username: String, password: String, db: Database)(implicit ec: ExecutionContext): Future[Int] = {
+    println("Got here ADD")
     db.run {
       User += UserRow(0, username, password) //0 is ignored, auto increment
     }
