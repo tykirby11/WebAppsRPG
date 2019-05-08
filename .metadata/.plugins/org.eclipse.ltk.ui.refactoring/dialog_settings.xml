@@ -4,12 +4,9 @@
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
 	</section>
-<<<<<<< HEAD
-=======
 	<section name="RefactoringStatusDialog">
-		<item value="806" key="DIALOG_WIDTH"/>
+		<item value="802" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="499" key="DIALOG_HEIGHT"/>
+		<item value="510" key="DIALOG_HEIGHT"/>
 	</section>
->>>>>>> 06a36d7759450e83f77612774afb6e5b5383cbe3
 </section>
