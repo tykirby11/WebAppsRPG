@@ -9,95 +9,85 @@ object DBShared {
   //weapon
   //classes
   
-  /** Entity class storing rows of table Bosses
-   *  @param bossid Database column bossid SqlType(INT), AutoInc, PrimaryKey
-   *  @param name Database column name SqlType(VARCHAR), Length(30,true)
-   *  @param hp Database column hp SqlType(INT)
-   *  @param atk Database column atk SqlType(INT)
-   *  @param spd Database column spd SqlType(INT) */
-  case class BossesRow(bossid: Int, name: String, hp: Int, atk: Int, spd: Int)
+  case class BossEntry(bossid: Int, name: String, hp: Int, atk: Int, spd: Int)
   
-  /** Entity class storing rows of table Enemies
-   *  @param enemyid Database column enemyid SqlType(INT), AutoInc, PrimaryKey
-   *  @param name Database column name SqlType(VARCHAR), Length(30,true)
-   *  @param hp Database column hp SqlType(INT)
-   *  @param atk Database column atk SqlType(INT)
-   *  @param spd Database column spd SqlType(INT) */
-  case class EnemiesRow(enemyid: Int, name: String, hp: Int, atk: Int, spd: Int)
+  case class EnemyEntry(enemyid: Int, name: String, hp: Int, atk: Int, spd: Int)
   
-  /** Entity class storing rows of table Items
-   *  @param itemid Database column itemid SqlType(INT), AutoInc, PrimaryKey
-   *  @param name Database column name SqlType(VARCHAR), Length(30,true)
-   *  @param hpmod Database column hpmod SqlType(INT)
-   *  @param atkmod Database column atkmod SqlType(INT)
-   *  @param spdmod Database column spdmod SqlType(INT)
-   *  @param uses Database column uses SqlType(INT) */
-  case class ItemsRow(itemid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int, uses: Int)
+  case class ItemEntry(itemid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int, uses: Int)
   
-  /** Entity class storing rows of table Weapons
-   *  @param weaponid Database column weaponid SqlType(INT), AutoInc, PrimaryKey
-   *  @param name Database column name SqlType(VARCHAR), Length(30,true)
-   *  @param hpmod Database column hpmod SqlType(INT)
-   *  @param atkmod Database column atkmod SqlType(INT)
-   *  @param spdmod Database column spdmod SqlType(INT) */
-  case class WeaponsRow(weaponid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int)
+  case class WeaponEntry(weaponid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int)
   
-  implicit val bossesRowWrites: Writes[BossesRow] = (
+  case class ClassEntry(classid: Int, name: String, hp: Int, atk: Int, spd: Int)
+  
+  implicit val bossEntryWrites: Writes[BossEntry] = (
     (JsPath \ "bossid").write[Int] and
     (JsPath \ "name").write[String] and
     (JsPath \ "hp").write[Int] and
     (JsPath \ "atk").write[Int] and
-    (JsPath \ "spd").write[Int])(unlift(BossesRow.unapply))
+    (JsPath \ "spd").write[Int])(unlift(BossEntry.unapply))
     
-  implicit val bossesRowReads: Reads[BossesRow] = (
+  implicit val bossEntryReads: Reads[BossEntry] = (
     (JsPath \ "bossid").read[Int] and
     (JsPath \ "name").read[String] and
     (JsPath \ "hp").read[Int] and
     (JsPath \ "atk").read[Int] and
-    (JsPath \ "spd").read[Int])(BossesRow.apply _)
+    (JsPath \ "spd").read[Int])(BossEntry.apply _)
   
-  implicit val enemiesRowWrites: Writes[EnemiesRow] = (
+  implicit val enemyEntryWrites: Writes[EnemyEntry] = (
     (JsPath \ "enemyid").write[Int] and
     (JsPath \ "name").write[String] and
     (JsPath \ "hp").write[Int] and
     (JsPath \ "atk").write[Int] and
-    (JsPath \ "spd").write[Int])(unlift(EnemiesRow.unapply))
+    (JsPath \ "spd").write[Int])(unlift(EnemyEntry.unapply))
     
-  implicit val enemiesRowReads: Reads[EnemiesRow] = (
+  implicit val enemyEntryReads: Reads[EnemyEntry] = (
     (JsPath \ "enemyid").read[Int] and
     (JsPath \ "name").read[String] and
     (JsPath \ "hp").read[Int] and
     (JsPath \ "atk").read[Int] and
-    (JsPath \ "spd").read[Int])(EnemiesRow.apply _)
+    (JsPath \ "spd").read[Int])(EnemyEntry.apply _)
     
-  implicit val itemsRowWrites: Writes[ItemsRow] = (
+  implicit val itemEntryWrites: Writes[ItemEntry] = (
     (JsPath \ "itemid").write[Int] and
     (JsPath \ "name").write[String] and
     (JsPath \ "hpmod").write[Int] and
     (JsPath \ "atkmod").write[Int] and
     (JsPath \ "spdmod").write[Int] and
-    (JsPath \ "uses").write[Int])(unlift(ItemsRow.unapply))
+    (JsPath \ "uses").write[Int])(unlift(ItemEntry.unapply))
     
-  implicit val itemsRowReads: Reads[ItemsRow] = (
+  implicit val itemEntryReads: Reads[ItemEntry] = (
     (JsPath \ "itemid").read[Int] and
     (JsPath \ "name").read[String] and
     (JsPath \ "hpmod").read[Int] and
     (JsPath \ "atkmod").read[Int] and
     (JsPath \ "spdmod").read[Int] and
-    (JsPath \ "uses").read[Int])(ItemsRow.apply _)
+    (JsPath \ "uses").read[Int])(ItemEntry.apply _)
     
-  implicit val weaponsRowWrites: Writes[WeaponsRow] = (
+  implicit val weaponEntryWrites: Writes[WeaponEntry] = (
     (JsPath \ "weaponid").write[Int] and
     (JsPath \ "name").write[String] and
     (JsPath \ "hpmod").write[Int] and
     (JsPath \ "atkmod").write[Int] and
-    (JsPath \ "spdmod").write[Int])(unlift(WeaponsRow.unapply))
+    (JsPath \ "spdmod").write[Int])(unlift(WeaponEntry.unapply))
     
-  implicit val weaponsRowReads: Reads[WeaponsRow] = (
+  implicit val weaponEntryReads: Reads[WeaponEntry] = (
     (JsPath \ "weaponid").read[Int] and
     (JsPath \ "name").read[String] and
     (JsPath \ "hpmod").read[Int] and
     (JsPath \ "atkmod").read[Int] and
-    (JsPath \ "spdmod").read[Int])(WeaponsRow.apply _)
+    (JsPath \ "spdmod").read[Int])(WeaponEntry.apply _)
   
+  implicit val classEntryWrites: Writes[ClassEntry] = (
+    (JsPath \ "classid").write[Int] and
+    (JsPath \ "name").write[String] and
+    (JsPath \ "hp").write[Int] and
+    (JsPath \ "atk").write[Int] and
+    (JsPath \ "spd").write[Int])(unlift(ClassEntry.unapply))
+    
+  implicit val ClassEntryReads: Reads[ClassEntry] = (
+    (JsPath \ "classid").read[Int] and
+    (JsPath \ "name").read[String] and
+    (JsPath \ "hp").read[Int] and
+    (JsPath \ "atk").read[Int] and
+    (JsPath \ "spd").read[Int])(ClassEntry.apply _)
 }

@@ -11,6 +11,44 @@ import play.api.libs.functional.syntax._
 
 import edu.trinity.webapps.shared.DBShared._
 
-class DBClient {
+object DBClient {
+  def getEnemyList(): List[EnemyEntry] = {
+    var enemyList: List[EnemyEntry] = null
+    $.getJSON("/enemies", success = (o, s, j) => {
+      enemyList = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
+    })
+    enemyList
+  }
   
+  def getBossList(): List[BossEntry] = {
+    var bossList: List[BossEntry] = null
+    $.getJSON("/bosses", success = (o, s, j) => {
+      bossList = Json.parse(js.JSON.stringify(o)).as[List[BossEntry]]
+    })
+    bossList
+  }
+  
+  def getItemList(): List[ItemEntry] = {
+    var itemList: List[ItemEntry] = null
+    $.getJSON("/items", success = (o, s, j) => {
+      itemList = Json.parse(js.JSON.stringify(o)).as[List[ItemEntry]]
+    })
+    itemList
+  }
+  
+  def getWeaponList(): List[WeaponEntry] = {
+    var weaponList: List[WeaponEntry] = null
+    $.getJSON("/weapons", success = (o, s, j) => {
+      weaponList = Json.parse(js.JSON.stringify(o)).as[List[WeaponEntry]]
+    })
+    weaponList
+  }
+  
+  def getClassList(): List[ClassEntry] = {
+    var classList: List[ClassEntry] = null
+    $.getJSON("/classes", success = (o, s, j) => {
+      classList = Json.parse(js.JSON.stringify(o)).as[List[ClassEntry]]
+    })
+    classList
+  }
 }

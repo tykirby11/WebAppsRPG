@@ -3,7 +3,7 @@
 	<section name="CleanDialogSettings">
 		<item value="569" key="DIALOG_WIDTH"/>
 		<item value="false" key="TOGGLE_SELECTED"/>
-		<item value="427" key="DIALOG_HEIGHT"/>
+		<item value="438" key="DIALOG_HEIGHT"/>
 		<item value="679" key="DIALOG_X_ORIGIN"/>
 		<item value="249" key="DIALOG_Y_ORIGIN"/>
 	</section>
@@ -12,6 +12,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/users/jviltoft/RPG2/WebAppsRPG"/>
 			<item value="/users/agieselm/WebApps/WebAppsRPG"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

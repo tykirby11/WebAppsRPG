@@ -21,6 +21,7 @@ object CanvasDrawing {
     private val slice6 = dom.document.getElementById("slice6")
     
     //test battle system
+    //val enemies = DBClient.getEnemyList()
     private var enHealth = 30;
     private val glitch = dom.document.getElementById("glitch")
 

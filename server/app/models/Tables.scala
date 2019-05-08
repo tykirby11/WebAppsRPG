@@ -14,7 +14,7 @@ trait Tables {
   import slick.jdbc.{GetResult => GR}
 
   /** DDL for all tables. Call .create to execute. */
-  lazy val schema: profile.SchemaDescription = Array(Bosses.schema, Enemies.schema, Items.schema, Playerclass.schema, User.schema, Weapons.schema).reduceLeft(_ ++ _)
+  lazy val schema: profile.SchemaDescription = Array(Bosses.schema, Enemies.schema, Items.schema, Playerclass.schema, Scores.schema, User.schema, Weapons.schema).reduceLeft(_ ++ _)
   @deprecated("Use .schema instead of .ddl", "3.0")
   def ddl = schema
 
@@ -88,18 +88,19 @@ trait Tables {
    *  @param hpmod Database column hpmod SqlType(INT)
    *  @param atkmod Database column atkmod SqlType(INT)
    *  @param spdmod Database column spdmod SqlType(INT)
-   *  @param uses Database column uses SqlType(INT) */
-  case class ItemsRow(itemid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int, uses: Int)
+   *  @param uses Database column uses SqlType(INT)
+   *  @param value Database column value SqlType(INT) */
+  case class ItemsRow(itemid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int, uses: Int, value: Int)
   /** GetResult implicit for fetching ItemsRow objects using plain SQL queries */
   implicit def GetResultItemsRow(implicit e0: GR[Int], e1: GR[String]): GR[ItemsRow] = GR{
     prs => import prs._
-    ItemsRow.tupled((<<[Int], <<[String], <<[Int], <<[Int], <<[Int], <<[Int]))
+    ItemsRow.tupled((<<[Int], <<[String], <<[Int], <<[Int], <<[Int], <<[Int], <<[Int]))
   }
   /** Table description of table Items. Objects of this class serve as prototypes for rows in queries. */
   class Items(_tableTag: Tag) extends profile.api.Table[ItemsRow](_tableTag, Some("rpg"), "Items") {
-    def * = (itemid, name, hpmod, atkmod, spdmod, uses) <> (ItemsRow.tupled, ItemsRow.unapply)
+    def * = (itemid, name, hpmod, atkmod, spdmod, uses, value) <> (ItemsRow.tupled, ItemsRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
-    def ? = ((Rep.Some(itemid), Rep.Some(name), Rep.Some(hpmod), Rep.Some(atkmod), Rep.Some(spdmod), Rep.Some(uses))).shaped.<>({r=>import r._; _1.map(_=> ItemsRow.tupled((_1.get, _2.get, _3.get, _4.get, _5.get, _6.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+    def ? = ((Rep.Some(itemid), Rep.Some(name), Rep.Some(hpmod), Rep.Some(atkmod), Rep.Some(spdmod), Rep.Some(uses), Rep.Some(value))).shaped.<>({r=>import r._; _1.map(_=> ItemsRow.tupled((_1.get, _2.get, _3.get, _4.get, _5.get, _6.get, _7.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
 
     /** Database column itemid SqlType(INT), AutoInc, PrimaryKey */
     val itemid: Rep[Int] = column[Int]("itemid", O.AutoInc, O.PrimaryKey)
@@ -113,6 +114,8 @@ trait Tables {
     val spdmod: Rep[Int] = column[Int]("spdmod")
     /** Database column uses SqlType(INT) */
     val uses: Rep[Int] = column[Int]("uses")
+    /** Database column value SqlType(INT) */
+    val value: Rep[Int] = column[Int]("value")
   }
   /** Collection-like TableQuery object for table Items */
   lazy val Items = new TableQuery(tag => new Items(tag))
@@ -149,6 +152,29 @@ trait Tables {
   /** Collection-like TableQuery object for table Playerclass */
   lazy val Playerclass = new TableQuery(tag => new Playerclass(tag))
 
+  /** Entity class storing rows of table Scores
+   *  @param id Database column id SqlType(INT)
+   *  @param score Database column score SqlType(INT) */
+  case class ScoresRow(id: Int, score: Int)
+  /** GetResult implicit for fetching ScoresRow objects using plain SQL queries */
+  implicit def GetResultScoresRow(implicit e0: GR[Int]): GR[ScoresRow] = GR{
+    prs => import prs._
+    ScoresRow.tupled((<<[Int], <<[Int]))
+  }
+  /** Table description of table Scores. Objects of this class serve as prototypes for rows in queries. */
+  class Scores(_tableTag: Tag) extends profile.api.Table[ScoresRow](_tableTag, Some("rpg"), "Scores") {
+    def * = (id, score) <> (ScoresRow.tupled, ScoresRow.unapply)
+    /** Maps whole row to an option. Useful for outer joins. */
+    def ? = ((Rep.Some(id), Rep.Some(score))).shaped.<>({r=>import r._; _1.map(_=> ScoresRow.tupled((_1.get, _2.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+
+    /** Database column id SqlType(INT) */
+    val id: Rep[Int] = column[Int]("id")
+    /** Database column score SqlType(INT) */
+    val score: Rep[Int] = column[Int]("score")
+  }
+  /** Collection-like TableQuery object for table Scores */
+  lazy val Scores = new TableQuery(tag => new Scores(tag))
+
   /** Entity class storing rows of table User
    *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
    *  @param username Database column username SqlType(VARCHAR), Length(20,true)
@@ -180,18 +206,19 @@ trait Tables {
    *  @param name Database column name SqlType(VARCHAR), Length(30,true)
    *  @param hpmod Database column hpmod SqlType(INT)
    *  @param atkmod Database column atkmod SqlType(INT)
-   *  @param spdmod Database column spdmod SqlType(INT) */
-  case class WeaponsRow(weaponid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int)
+   *  @param spdmod Database column spdmod SqlType(INT)
+   *  @param value Database column value SqlType(INT) */
+  case class WeaponsRow(weaponid: Int, name: String, hpmod: Int, atkmod: Int, spdmod: Int, value: Int)
   /** GetResult implicit for fetching WeaponsRow objects using plain SQL queries */
   implicit def GetResultWeaponsRow(implicit e0: GR[Int], e1: GR[String]): GR[WeaponsRow] = GR{
     prs => import prs._
-    WeaponsRow.tupled((<<[Int], <<[String], <<[Int], <<[Int], <<[Int]))
+    WeaponsRow.tupled((<<[Int], <<[String], <<[Int], <<[Int], <<[Int], <<[Int]))
   }
   /** Table description of table Weapons. Objects of this class serve as prototypes for rows in queries. */
   class Weapons(_tableTag: Tag) extends profile.api.Table[WeaponsRow](_tableTag, Some("rpg"), "Weapons") {
-    def * = (weaponid, name, hpmod, atkmod, spdmod) <> (WeaponsRow.tupled, WeaponsRow.unapply)
+    def * = (weaponid, name, hpmod, atkmod, spdmod, value) <> (WeaponsRow.tupled, WeaponsRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
-    def ? = ((Rep.Some(weaponid), Rep.Some(name), Rep.Some(hpmod), Rep.Some(atkmod), Rep.Some(spdmod))).shaped.<>({r=>import r._; _1.map(_=> WeaponsRow.tupled((_1.get, _2.get, _3.get, _4.get, _5.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+    def ? = ((Rep.Some(weaponid), Rep.Some(name), Rep.Some(hpmod), Rep.Some(atkmod), Rep.Some(spdmod), Rep.Some(value))).shaped.<>({r=>import r._; _1.map(_=> WeaponsRow.tupled((_1.get, _2.get, _3.get, _4.get, _5.get, _6.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
 
     /** Database column weaponid SqlType(INT), AutoInc, PrimaryKey */
     val weaponid: Rep[Int] = column[Int]("weaponid", O.AutoInc, O.PrimaryKey)
@@ -203,6 +230,8 @@ trait Tables {
     val atkmod: Rep[Int] = column[Int]("atkmod")
     /** Database column spdmod SqlType(INT) */
     val spdmod: Rep[Int] = column[Int]("spdmod")
+    /** Database column value SqlType(INT) */
+    val value: Rep[Int] = column[Int]("value")
   }
   /** Collection-like TableQuery object for table Weapons */
   lazy val Weapons = new TableQuery(tag => new Weapons(tag))
