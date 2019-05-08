@@ -223,12 +223,17 @@ object CanvasDrawing {
       val tableHeaderBut = dom.document.createElement("th").asInstanceOf[HTMLElement];
       tableHeaderBut.innerHTML = "<button>Use</button>";
       tableHeaderBut.id = "useItem";
+      tableHeaderBut.onclick = { (e:Event) => deleteInvItem();}
       val tableRow = dom.document.createElement("tr").asInstanceOf[HTMLElement];
-      tableHeaderBut.onclick = { (e:Event) => tableHeaderBut.parentNode.parentNode.removeChild(tableRow)}
       
       conTable.appendChild(tableRow);
       tableRow.appendChild(tableHeaderItem);
       tableRow.appendChild(tableHeaderBut);
+    }
+    
+    def deleteInvItem()= {
+      val conTable = dom.document.getElementById("consumables").asInstanceOf[HTMLElement];
+      dom.window.alert("poop");
     }
     
     dom.document.getElementById("sprayPurchase").addEventListener("click", (event: Event) => {
