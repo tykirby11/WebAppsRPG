@@ -2,29 +2,92 @@
 
 @main("Heroes of the Code Block"){
 
+<div id = "gamePageContainer"> 
 	<div id = "game-container">
 	  <div id = "game-headers-wrapper">
 		<h2 id="game-header">Heroes of the Code Block</h2>
 		<h3 id="game-sub-header">How Long Can You Last in Scalandia?</h3>
 	  </div>
 
-<canvas id="gameCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
-    @scalajs.html.scripts("csci3345-s19-client-rpg", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+		<canvas id="gameCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
+    	@scalajs.html.scripts("csci3345-s19-client-rpg", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+
+
 	</div>
 	
-	<div id="shop-wrapper">
-    <div id="shop">
-    
-    <h2> <u> _____________SHOP______________ </u> </h2>
-    
-    <div id ="col">
-    <button class ="shopButtons">Weapons</button>
-    <button class ="shopButtons" >Items</button>
-    <button class ="shopButtons">Sell</button>
+
+  
+	
+	<div style = "none" id = "inventory-wrapper">
+	<div id="inventory">
+	    	<h2>Inventory</h2>
+	    	<div id ="inv-inner">
+	    		<h3 class ="shopHeader">Consumables</h3>
+	    		@*Dummy Consumables*@
+	    		<table id = "consumables">
+	    			@*
+	    			<tr>
+	    				<th><p>Debugging Spray</p></th>
+	    				<th><button id = "sprayPurchase">$50</button></th>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th><p>Overclocker</p></th>
+	    				<th><button class = "purchase">$50</button></th>
+	    			</tr>
+	    			*@
+	    		</table>
+	    		<h3 class ="shopHeader">Equipment</h3>
+	        	@*Dummy Equipment*@
+	        	<table id = "equipment">
+	        		@*
+	        		<tr>
+	        			<th><p>Wand of Copy-Paste<p></th>
+	        			<th><button class = "purchase">$50</button></th>
+	        		</tr>
+	    			<tr>	
+	    				<th><p>Ring of Concurrency</p></th>
+	  	  				<th><button class = "purchase">$50</button></th>
+	    			</tr>
+	    			*@
+	    		</table>
+			</div>
+	  </div>	
 	</div>
-    </div>
+	
+	<div id="wrapper">
+	    <div id="shop">
+	    	<h2>Shop</h2>
+	    	<div id ="shop-inner">
+	    		<h3 class ="shopHeader">Consumables</h3>
+	    		@*Dummy Consumables*@
+	    		<table id = "consumables">
+	    			<tr>
+	    				<th><p>Debugging Spray</p></th>
+	    				<th><button id = "sprayPurchase">$50</button></th>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th><p>Overclocker</p></th>
+	    				<th><button class = "purchase">$50</button></th>
+	    			</tr>
+	    			
+	    		</table>
+	    		<h3 class ="shopHeader">Equipment</h3>
+	        	@*Dummy Equipment*@
+	        	<table id = "equipment">
+	        		<tr>
+	        			<th><p>Wand of Copy-Paste<p></th>
+	        			<th><button class = "purchase">$50</button></th>
+	        		</tr>
+	    			<tr>	
+	    				<th><p>Ring of Concurrency</p></th>
+	  	  				<th><button class = "purchase">$50</button></th>
+	    			</tr>
+	    		</table>
+			</div>
+	  </div>	
 	</div>
-	</br>
 	</br>
 	
 	@* this is how you import a image *@
@@ -38,4 +101,5 @@
 	<img id= "glitch" style = "display: none" src ="@routes.Assets.at("images/glitch_gremlin.png")"/>
 	<img id= "mapBackground" style = "display: none" src ="@routes.Assets.at("images/darkforkintheroad.jpg")"/>
 	<img id= "eventBackground" style = "display: none" src ="@routes.Assets.at("images/scala-spiral.png")"/>
+</div>	
 }
