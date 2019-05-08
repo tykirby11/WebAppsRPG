@@ -11,13 +11,22 @@ import play.api.libs.functional.syntax._
 
 import edu.trinity.webapps.shared.DBShared._
 
+
+
 object DBClient {
-  def getEnemyList(): List[EnemyEntry] = {
-    var enemyList: List[EnemyEntry] = null
+  var enemyList: List[EnemyEntry] = null
+  
+  def getEnemyList(): Unit = {
     $.getJSON("/enemies", success = (o, s, j) => {
       enemyList = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
+      println("this should be first")
     })
-    enemyList
+    println("this should be second")
+  }
+  
+  def updateEnemyList(elist: List[EnemyEntry]): Unit = {
+    println(elist)
+    enemyList = elist
   }
   
   def getBossList(): List[BossEntry] = {
