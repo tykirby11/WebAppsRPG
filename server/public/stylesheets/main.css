@@ -338,8 +338,26 @@ li a:hover:not(.active) {
 	color: white;
 }
 
+#inventory{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	
+	background-color: #1E1E24;
+	
+	font-family: Helvetica, Sans-Serif;
+	color: white;
+
+	width: 45%;
+}
+
 #shop h2{
 	padding-top: 1em;
+}
+
+#inventory h2{
+	padding-top: 1em;
+	text-align:center;
 }
 
 .shopHeader{
@@ -350,7 +368,19 @@ li a:hover:not(.active) {
 	text-align: center;
 }
 
+#inventory h3{
+	text-align: center;
+}
+
+
 #shop-inner{
+	margin-left:auto;
+	margin-right: auto;
+	
+	background-color: #81AE9D;
+}
+
+#inv-inner{
 	margin-left:auto;
 	margin-right: auto;
 	

@@ -129,9 +129,13 @@ object CanvasDrawing {
       if (enHealth <= 0){
         enHealth = 0;
         context.clearRect(300,100,192,192);
+        gold += 50;
+        
+        context.font = "20px Arial";
       }
       hasAttacked = true;
     }
+    
     
     def enemyAttack() : Unit = {
       pHealth -= enDamage;
@@ -179,7 +183,20 @@ object CanvasDrawing {
         }
       }
     }
-
+    
+    def currencySpend(): Unit = {
+      if(gold >= 50){
+        gold -= 50;
+        pDamage += 300;
+      } else {
+        dom.window.alert("You're broke like a sad bloke, bucko");
+      }
+    }
+    
+    
+    dom.document.getElementById("sprayPurchase").addEventListener("click", (event: Event) => {
+      currencySpend()
+    })
     
    def attack(): Unit = {
      setTimeout(250)(context.drawImage(slice1,400,150,26,110));
