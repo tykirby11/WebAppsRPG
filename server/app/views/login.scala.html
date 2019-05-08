@@ -1,5 +1,5 @@
 @* login Template File *@
-@(param: Any)
+@()
 
 
 <!DOCTYPE html>
@@ -19,9 +19,29 @@
 
 
 
-	<form action="" id = "loginForm" method = "">
-	  <input type ="text" placeholder ="username" >
-	  <input type= "password" placeholder ="password">
+	<form action="login" id = "loginForm" method = "post">
+	  <input type ="text" name = "username" placeholder = "username" id = "loginUser">
+	  <input type= "password" name = "password" placeholder = "password" id = "loginPass">
+
+    <a id = "" href = "#"> forgot your password? </a>
+    <br>
+
+	  <input type = "submit">
+    <br>
+    <a id = "noAccount" href = "#"> don't have an account? </a>
+
+	</form>
+
+  </div>
+  
+  <div class="wrapper">
+  <div id="formContentCreate">
+
+        <h2> Create </h2>
+
+	<form action="create" id = "createForm" method = "post">
+	  <input type ="text" name = "usernameC" placeholder = "username" id = "createUser">
+	  <input type= "password" name = "passwordC" placeholder = "password" id = "createPass">
 
     <a id = "" href = "#"> forgot your password? </a>
     <br>

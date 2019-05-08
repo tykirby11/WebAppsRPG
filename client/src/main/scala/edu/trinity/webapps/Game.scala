@@ -1,4 +1,4 @@
-package edu.trinity.webapps
+/*package edu.trinity.webapps
 
 import org.scalajs.dom
 import org.querki.jquery._
@@ -263,4 +263,4 @@ object CanvasDrawing {
   }
    
 }
-
+*/
