@@ -22,6 +22,44 @@
 	
 
   
+	
+	<div style = "none" id = "inventory-wrapper">
+	<div id="inventory">
+	    	<h2>Inventory</h2>
+	    	<div id ="inv-inner">
+	    		<h3 class ="shopHeader">Consumables</h3>
+	    		@*Dummy Consumables*@
+	    		<table id = "consumables">
+	    			@*
+	    			<tr>
+	    				<th><p>Debugging Spray</p></th>
+	    				<th><button id = "sprayPurchase">$50</button></th>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th><p>Overclocker</p></th>
+	    				<th><button class = "purchase">$50</button></th>
+	    			</tr>
+	    			*@
+	    		</table>
+	    		<h3 class ="shopHeader">Equipment</h3>
+	        	@*Dummy Equipment*@
+	        	<table id = "equipment">
+	        		@*
+	        		<tr>
+	        			<th><p>Wand of Copy-Paste<p></th>
+	        			<th><button class = "purchase">$50</button></th>
+	        		</tr>
+	    			<tr>	
+	    				<th><p>Ring of Concurrency</p></th>
+	  	  				<th><button class = "purchase">$50</button></th>
+	    			</tr>
+	    			*@
+	    		</table>
+			</div>
+	  </div>	
+	</div>
+	
 	<div id="wrapper">
 	    <div id="shop">
 	    	<h2>Shop</h2>
@@ -55,38 +93,6 @@
 			</div>
 	  </div>	
 	</div>
-	
-	<div id="inventory">
-	    	<h2>Inventory</h2>
-	    	<div id ="inv-inner">
-	    		<h3 class ="shopHeader">Consumables</h3>
-	    		@*Dummy Consumables*@
-	    		<table id = "consumables">
-	    			<tr>
-	    				<th><p>Debugging Spray</p></th>
-	    				<th><button id = "sprayPurchase">$50</button></th>
-	    			</tr>
-	    			
-	    			<tr>
-	    				<th><p>Overclocker</p></th>
-	    				<th><button class = "purchase">$50</button></th>
-	    			</tr>
-	    			
-	    		</table>
-	    		<h3 class ="shopHeader">Equipment</h3>
-	        	@*Dummy Equipment*@
-	        	<table id = "equipment">
-	        		<tr>
-	        			<th><p>Wand of Copy-Paste<p></th>
-	        			<th><button class = "purchase">$50</button></th>
-	        		</tr>
-	    			<tr>	
-	    				<th><p>Ring of Concurrency</p></th>
-	  	  				<th><button class = "purchase">$50</button></th>
-	    			</tr>
-	    		</table>
-			</div>
-	  </div>	
 	
 	@* this is how you import a image *@
 	@*<img id= "slice" style = "display: none" src ="@routes.Assets.at("images/slice.gif")"/> *@

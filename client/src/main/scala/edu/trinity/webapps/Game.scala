@@ -20,6 +20,8 @@ object CanvasDrawing {
     private val slice5 = dom.document.getElementById("slice5")
     private val slice6 = dom.document.getElementById("slice6")
     
+    
+    private var numOfBut = 0;
     private var gold = 100;
     
     //test battle system
@@ -45,6 +47,7 @@ object CanvasDrawing {
     private val bh = 50
 
     private var arenaExists = false;
+    private var itemVisible = false;
     
     def drawArena(): Unit = {
       //battle window
@@ -182,22 +185,62 @@ object CanvasDrawing {
           drawZeroHealth();
         }
       }
+      
+      //if item button is pressed
+      if(((e.clientX - canvas.offsetLeft) > 193 && (e.clientX - canvas.offsetLeft) < 316) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){
+        if(itemVisible == true){
+          dom.document.querySelector("#inventory-wrapper").asInstanceOf[HTMLElement].style.display = "initial";
+          itemVisible = false;
+          
+          context.font = "25px Arial";
+          context.fillText("Inventory Expanded", 23, 432);
+          setTimeout(1500)(context.clearRect(23,412, 250,50));
+        } else {
+          dom.document.querySelector("#inventory-wrapper").asInstanceOf[HTMLElement].style.display = "none";
+          itemVisible = true;
+          
+          context.font = "25px Arial";
+          context.fillText("Inventory Collapsed", 23, 432);
+          setTimeout(1500)(context.clearRect(23,412, 250,50));
+        }
+      }
     }
     
     def currencySpend(): Unit = {
       if(gold >= 50){
         gold -= 50;
-        pDamage += 300;
+        addInvItem();
       } else {
         dom.window.alert("You're broke like a sad bloke, bucko");
       }
     }
     
     
-    dom.document.getElementById("sprayPurchase").addEventListener("click", (event: Event) => {
-      currencySpend()
-    })
+    def addInvItem(): Unit = {
+      val conTable = dom.document.getElementById("consumables").asInstanceOf[HTMLElement];
+      val tableHeaderItem = dom.document.createElement("th").asInstanceOf[HTMLElement];
+      tableHeaderItem.innerHTML = "<p>Debugging Spray</p>";
+      val tableHeaderBut = dom.document.createElement("th").asInstanceOf[HTMLElement];
+      tableHeaderBut.innerHTML = "<button>Use</button>";
+      tableHeaderBut.id = "useItem";
+      tableHeaderBut.onclick = { (e:Event) => deleteInvItem();}
+      val tableRow = dom.document.createElement("tr").asInstanceOf[HTMLElement];
+      
+      conTable.appendChild(tableRow);
+      tableRow.appendChild(tableHeaderItem);
+      tableRow.appendChild(tableHeaderBut);
+    }
     
+    def deleteInvItem()= {
+      val conTable = dom.document.getElementById("consumables").asInstanceOf[HTMLElement];
+      dom.window.alert("poop");
+    }
+    
+    dom.document.getElementById("sprayPurchase").addEventListener("click", (event: Event) => {
+      currencySpend();
+    })
+     
+   
    def attack(): Unit = {
      setTimeout(250)(context.drawImage(slice1,400,150,26,110));
      setTimeout(250)(clearAnimation);
