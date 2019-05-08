@@ -1,18 +1,13 @@
-@(param: Any)
+@()
 
 @main("Heroes of the Code Block"){
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-</head>
 
 <div id = "gamePageContainer"> 
 	<div id = "game-container">
-
+	  <div id = "game-headers-wrapper">
 		<h2 id="game-header">Heroes of the Code Block</h2>
-	
 		<h3 id="game-sub-header">How Long Can You Last in Scalandia?</h3>
-
+	  </div>
 
 		<canvas id="gameCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
     	@scalajs.html.scripts("csci3345-s19-client-rpg", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
@@ -92,6 +87,7 @@
 			</div>
 	  </div>	
 	</div>
+	</br>
 	
 	@* this is how you import a image *@
 	@*<img id= "slice" style = "display: none" src ="@routes.Assets.at("images/slice.gif")"/> *@
@@ -103,5 +99,6 @@
 	<img id= "slice6" style = "display: none" src ="@routes.Assets.at("images/slice6.png")"/>
 	<img id= "glitch" style = "display: none" src ="@routes.Assets.at("images/glitch_gremlin.png")"/>
 	<img id= "mapBackground" style = "display: none" src ="@routes.Assets.at("images/darkforkintheroad.jpg")"/>
+	<img id= "eventBackground" style = "display: none" src ="@routes.Assets.at("images/scala-spiral.png")"/>
 </div>	
 }

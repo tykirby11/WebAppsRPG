@@ -89,7 +89,9 @@
 	margin-bottom: 2em;
 }
 
-#lead-table{
+#lead-table{padding: 0;
+    margin: auto;
+    display: block;
 	width: 50%;
 	border: 2px black solid;
 	
@@ -140,10 +142,6 @@
 	display: block;
 }	
 
-#game-container{
-}
-	
-}
 @import url('https://fonts.googleapis.com/css?family=MedievalSharp');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
@@ -182,7 +180,7 @@ h1 {
 }
 
 #mainTitle {
-  font-family: "MedievalSharp", sans-serif;
+  font-family: 'MedievalSharp', sans-serif;
   font-size: 80px;
   color: white;
   margin-bottom: -10px;
@@ -222,9 +220,44 @@ h1 {
   vertical-align: middle;
 }
 
+<<<<<<< HEAD
+
+
+#shop {
+  border-radius: 10px 10px 10px 10px;
+  background: rgb(160,82,45);
+  padding: 0px;
+  width: 90%;
+  max-width: 500px;
+  /* box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); */
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+#col {
+  column-count:1;
+  	
+}
+
+
+
+.shopButtons {
+  background-color: rgb(169,169,169);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  width:220px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 20px 12px;
+  white-space:nowrap;
+  
+
+=======
 #shop{
 	width: 45%;
 	background-color: rgba(255,0,0,.3);
+>>>>>>> c209f27aadd5bc3b9813d75f0dc89e85d08db5be
 }
 
 #shop h2{
@@ -431,9 +464,17 @@ li a:hover:not(.active) {
     display: block;
 }
 
-#game-header #game-sub-header {
+#game-headers-wrapper {
 	text-align: center
 }
 
+#game-header {
+	font-family: "MedievalSharp", sans-serif;
+    font-size: 50px;
+}
 
+#game-sub-header {
+	font-family: "MedievalSharp", sans-serif;
+    font-size: 36px;
+}
 
