@@ -21,3 +21,10 @@ GET        /versionedAssets/*file        controllers.Assets.versioned(path="/pub
 POST 	   /login					 	 controllers.LoginController.login
 + nocsrf
 POST 	   /create					 	 controllers.LoginController.createUser
+
+# Ajax shit
+GET		   /enemies				         controllers.DBController.enemies
+GET		   /bosses				         controllers.DBController.bosses
+GET		   /items				         controllers.DBController.items
+GET		   /weapons				         controllers.DBController.weapons
+GET		   /classes				         controllers.DBController.classes

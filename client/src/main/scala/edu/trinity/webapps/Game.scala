@@ -1,4 +1,4 @@
-/*package edu.trinity.webapps
+package edu.trinity.webapps
 
 import org.scalajs.dom
 import org.querki.jquery._
@@ -24,12 +24,19 @@ object CanvasDrawing {
     private var numOfBut = 0;
     private var gold = 100;
     
+    DBClient.getEnemyList()
+
+    println("ffffffffffffffffffffffffffffff")
+    
+    //val gremlin = enemies.filter(_.enemyid == 1).apply(0)
+    
     //test battle system
     
     //boolean to see if player has attacked
     private var hasAttacked = false;
     
     //test health
+
     private var enHealth = 30;
     private var pHealth = 40;
     
@@ -268,4 +275,4 @@ object CanvasDrawing {
   }
    
 }
-*/
+
