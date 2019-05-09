@@ -24,24 +24,30 @@ object CanvasDrawing {
   private val slice5 = dom.document.getElementById("slice5")
   private val slice6 = dom.document.getElementById("slice6")
 
-  private var numOfBut = 0;
-  private var gold = 100;
-
   //boolean to see if player has attacked
   private var hasAttacked = false;
 
-  //test health
-  private var enHealth = 30;
-  private var pHealth = 40;
-
-  //test speed
-  private var enSpeed = 30;
+  //Player stats 
+  private var pHealth = 1000;
   private var pSpeed = 40;
+  private var pDamage = 300;
+  private var score = 0;
+  private var gold = 100;
 
-  //test damage
-  private var pDamage = 10;
+  //Enemy stats
+  private var enName = ""
+  private var enHealth = 30;
+  private var enSpeed = 30;
   private var enDamage = 5;
+  private var reward = 50
+  
+  //Event
+  private var itemName = ""
+  private var itemHpMod = 0
+  private var itemSpdMod = 0
+  private var itemAtkMod = 0
 
+  //Enemy sprites
   private val glitch = dom.document.getElementById("glitch")
 
   private val bw = 125
@@ -54,42 +60,57 @@ object CanvasDrawing {
   //--------------------------------end of global variables--------------------------------//
 
   //-------------------------------beginning of main map screen----------------------------//
-  def drawMap(): Unit = {
+  def drawMap(nodeL: Node, nodeR: Node): Unit = {
+
+    println(nodeL.dbList)
+    println(nodeR.dbList)
     
-    handleMapInput();
-    
+    score += 1
+
+    handleMapInput(nodeL, nodeR);
+
     clearMapCanvas();
 
     drawMapBackground();
 
-    drawLeftMapNode();
+    drawLeftMapNode(nodeL);
 
-    drawRightMapNode();
+    drawRightMapNode(nodeR);
 
     drawUserScoreAndGold();
   }
 
-  def handleMapInput(): Unit = {
+  def start(): Unit = {
+    DBClient.generateNodes()
+  }
+
+  def handleMapInput(nodeL: Node, nodeR: Node): Unit = {
     //handling user input for map
     canvas.onmousedown = (e: dom.MouseEvent) => {
-      val coords = (e.clientX - canvas.offsetLeft , e.clientY - canvas.offsetTop)
+      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
       println(s"x: ${coords._1}, y: ${coords._2}")
-
-      //Lewis's example to render drawArena on canvas click
-      //DBClient.getEnemy(CanvasDrawing.drawArena)
 
       //if left node is pressed, trigger event
       if (((e.clientX - canvas.offsetLeft > 177) && (e.clientX - canvas.offsetLeft < 352)) &&
-          ((e.clientY - canvas.offsetTop > 243) && (e.clientY - canvas.offsetTop < 316))) {
+        ((e.clientY - canvas.offsetTop > 243) && (e.clientY - canvas.offsetTop < 316))) {
         println("clicked left node, this should do something!")
-        println("Enemy Encounter triggered")
-        CanvasDrawing.drawArena()
+        nodeL.state match {
+          case NodeState.black => drawArena(nodeL.asInstanceOf[MapNode[EnemyEntry]].rollSelection)
+          case NodeState.purple => drawItemEvent(nodeL.asInstanceOf[MapNode[ItemEntry]].rollSelection)
+          case NodeState.yellow => drawWeaponEvent(nodeL.asInstanceOf[MapNode[WeaponEntry]].rollSelection)
+          case NodeState.red => drawBossArena(nodeL.asInstanceOf[MapNode[BossEntry]].rollSelection)
+          
+        }
       } //if right node is pressed, trigger event 
-      else if (((e.clientX - canvas.offsetLeft > 477) && (e.clientX - canvas.offsetLeft < 652)) && 
-              ((e.clientY - canvas.offsetTop > 243) && (e.clientY - canvas.offsetTop < 316))) {
+      else if (((e.clientX - canvas.offsetLeft > 477) && (e.clientX - canvas.offsetLeft < 652)) &&
+        ((e.clientY - canvas.offsetTop > 243) && (e.clientY - canvas.offsetTop < 316))) {
         println("clicked right node, this should do something!")
-        CanvasDrawing.drawEvent()
-        eventTriggered = true
+        nodeR.state match {
+          case NodeState.black => drawArena(nodeR.asInstanceOf[MapNode[EnemyEntry]].rollSelection)
+          case NodeState.purple => drawItemEvent(nodeR.asInstanceOf[MapNode[ItemEntry]].rollSelection)
+          case NodeState.yellow => drawWeaponEvent(nodeR.asInstanceOf[MapNode[WeaponEntry]].rollSelection)
+          case NodeState.red => drawBossArena(nodeR.asInstanceOf[MapNode[BossEntry]].rollSelection)
+        }
       }
     }
   }
@@ -105,47 +126,83 @@ object CanvasDrawing {
     context.drawImage(mapBackground, 0, 0, canvas.width, 600)
   }
 
-  def drawLeftMapNode(): Unit = {
+  def drawLeftMapNode(nodeL: Node): Unit = {
     //left node
+    //println("Left Node Printed")
     context.rect(175, 240, 175, 75)
     context.stroke()
     context.lineWidth = "3"
     context.fillStyle = "white"
     context.font = "20px Arial"
     context.fillText("Go Left For:", 180, 271)
-    context.fillText("Enemy Encounter", 180, 300);
+    nodeL.state match {
+      case NodeState.black => context.fillText("Enemy Encounter", 180, 300)
+      case NodeState.purple => context.fillText("Item", 180, 300)
+      case NodeState.yellow => context.fillText("Weapon", 180, 300)
+      case NodeState.red => context.fillText("Boss", 180, 300)
+    }
   }
 
-  def drawRightMapNode(): Unit = {
+  def drawRightMapNode(nodeR: Node): Unit = {
     //right node
+    //println("Right Node Printed")
     context.rect(475, 240, 175, 75)
     context.stroke()
+    context.lineWidth = "3"
     context.fillStyle = "white"
     context.font = "20px Arial"
     context.fillText("Go Right For:", 480, 271)
-    context.fillText("Mystery Event", 480, 300);
+    nodeR.state match {
+      case NodeState.black => context.fillText("Enemy Encounter", 480, 300)
+      case NodeState.purple => context.fillText("Item", 480, 300)
+      case NodeState.yellow => context.fillText("Weapon", 480, 300)
+      case NodeState.red => context.fillText("Boss", 480, 300)
+    }
   }
 
   def drawUserScoreAndGold(): Unit = {
     //user score
-    context.fillText("Nodes Visited: 69", 620, 30)
+    context.fillText("Nodes Visited: " + score, 620, 30)
 
     //gold
-    context.fillText("Gold: 100", 30, 30)
+    context.fillText("Gold: " + gold, 30, 30)
   }
 
   //--------------------------------end of main map screen---------------------------------//
 
   //--------------------------------Random event screen------------------------------------//
-  def drawEvent(): Unit = {
+  def drawItemEvent(item: ItemEntry): Unit = {
+    itemName = item.name
+    itemHpMod = item.hpmod
+    itemAtkMod = item.atkmod
+    itemSpdMod = item.spdmod
     
-   handleEventInput();
-   
-   clearEventCanvas();
-   
-   drawEventElements();
-   
+    eventTriggered = true
+    
+    handleEventInput();
+
+    clearEventCanvas();
+
+    drawEventElements();
+
   }
+  
+  def drawWeaponEvent(weapon: WeaponEntry): Unit = {
+    itemName = weapon.name
+    itemHpMod = weapon.hpmod
+    itemAtkMod = weapon.atkmod
+    itemSpdMod = weapon.spdmod
+    
+    eventTriggered = true
+    
+    handleEventInput();
+
+    clearEventCanvas();
+
+    drawEventElements();
+
+  }
+  
   def handleEventInput(): Unit = {
     //handling user input for an event
     dom.document.onmousedown = (e: dom.MouseEvent) => {
@@ -155,8 +212,8 @@ object CanvasDrawing {
 
       //if continue area is pressed, trigger event
       if (((e.clientX - canvas.offsetLeft > 248) && (e.clientX - canvas.offsetLeft < 457)) &&
-          ((e.clientY - canvas.offsetTop > 408) && (e.clientY - canvas.offsetTop < 439))) {
-        CanvasDrawing.drawMap()
+        ((e.clientY - canvas.offsetTop > 408) && (e.clientY - canvas.offsetTop < 439))) {
+        start()
       }
     }
   }
@@ -165,24 +222,30 @@ object CanvasDrawing {
     //clear out map area for event
     context.clearRect(0, 0, canvas.width, canvas.height)
   }
-  
+
   def drawEventElements(): Unit = {
     val eventBackground = dom.document.getElementById("eventBackground")
     context.drawImage(eventBackground, 0, 0, canvas.width, canvas.height)
-    context.fillText("You've Found a Lost Treasure Chest", 250, 120)
-    context.fillText("Gold +50!", 250, 285)
+    context.fillText("You've Found a " + itemName + " !", 250, 120)
+    //context.fillText("Gold +50!", 250, 285)
     context.fillText("Click Here to Continue", 250, 430)
   }
   //--------------------------------End of event screen------------------------------------//
 
   //combat mode
-    def drawArena(): Unit = {
-  //def drawArena(enemy: EnemyEntry): Unit = {
-      
+  def drawArena(enemy: EnemyEntry): Unit = {
+    //Update enemy vars
+    enName = enemy.name
+    enHealth = enemy.hp
+    enSpeed = enemy.spd
+    enDamage = enemy.atk
+    reward = enemy.hp
+
+    //Draw arena
     clearCombatCanvas();
-    
-    handleCombatInput();
-    
+
+    handleCombatInput()
+
     drawBattleWindow();
     
     drawUserArea();
@@ -190,7 +253,7 @@ object CanvasDrawing {
     drawAttackButton();
     
     drawItemButton();
-    
+
     drawHealthDivider();
     
     drawUIDivider();
@@ -198,10 +261,62 @@ object CanvasDrawing {
     drawBossName();
     
     drawPlayerHealth();
-    
-    drawEnemy();
-    
+
+    drawEnemyInitial();
+
     arenaExists = true;
+    
+    if (enSpeed >= pSpeed) {
+      
+      println("Enemy Faster, so attack initially")
+      
+      enemyAttack();
+      
+    }
+    
+  }
+  
+  def drawBossArena(enemy: BossEntry): Unit = {
+    //Update enemy vars
+    enName = enemy.name
+    enHealth = enemy.hp
+    enSpeed = enemy.spd
+    enDamage = enemy.atk
+    reward = enemy.hp
+
+    //Draw arena
+    clearCombatCanvas();
+
+    handleCombatInput()
+
+    drawBattleWindow();
+    
+    drawUserArea();
+    
+    drawAttackButton();
+    
+    drawItemButton();
+
+    drawHealthDivider();
+    
+    drawUIDivider();
+    
+    drawBossName();
+    
+    drawPlayerHealth();
+
+    drawEnemyInitial();
+
+    arenaExists = true;
+    
+    if (enSpeed >= pSpeed) {
+      
+      println("Enemy Faster, so attack initially")
+      
+      enemyAttack();
+      
+    }
+    
   }
 
   //------------------------------combat mode helper functions----------------------------------//
@@ -210,12 +325,19 @@ object CanvasDrawing {
 
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
     canvas.onmousedown = (e: dom.MouseEvent) => {
+      
+      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
+
+      println(s"x: ${coords._1}, y: ${coords._2}")
+      println(arenaExists)
 
       //if attack is pressed and if button is showing
       if (((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) &&
         ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true) {
+        println("Attack Pressed, hasAttacked = " + hasAttacked + " enHealth = " + enHealth)
         if (enHealth > 0 && hasAttacked != true) {
           playerAttackTurn();
+          println("Attack Pressed Check")
         }
         if (enHealth > 0) {
           setTimeout(550)(drawEnemy());
@@ -223,7 +345,6 @@ object CanvasDrawing {
           drawZeroHealth();
         }
       }
-
       //if item button is pressed
       if (((e.clientX - canvas.offsetLeft) > 193 && (e.clientX - canvas.offsetLeft) < 316) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true) {
         if (itemVisible == true) {
@@ -238,9 +359,10 @@ object CanvasDrawing {
       }
     }
   }
-  
+
   def drawBattleWindow(): Unit = {
     //battle window
+    context.fillStyle = "black"
     context.rect(20, 20, 760, 390);
     context.stroke();
   }
@@ -292,8 +414,8 @@ object CanvasDrawing {
 
   def drawBossName(): Unit = {
     //Boss Name
-    context.font = "30px Veranda"
-    context.fillText("GLITCH GREMLIN", 255, 60);
+    context.font = "30px Arial"
+    context.fillText(enName, 255, 60);
   }
 
   def drawPlayerHealth(): Unit = {
@@ -344,17 +466,37 @@ object CanvasDrawing {
     if (enHealth <= 0) {
       enHealth = 0;
       context.clearRect(300, 100, 192, 192);
-      gold += 50;
+      gold += reward;
+      start()
     }
   }
 
   def enemyAttack(): Unit = {
+    println("Enemy Attack")
     pHealth -= enDamage;
     context.clearRect(40, 25, 200, 50);
     drawPlayerHealth();
+    checkPHealth();
     hasAttacked = false;
   }
 
+  def checkPHealth(): Unit = {
+    if(pHealth <= 0){
+      println("checked Health");
+      start();
+      resetStats();
+    }
+  }
+  
+  def resetStats(): Unit = {
+      pHealth = 100;
+      pSpeed = 40;
+      pDamage = 10;
+      score = 0;
+      gold = 100;
+      println(pHealth);
+  }
+  
   def displayDamageDealt(): Unit = {
     context.font = "25px Veranda";
     context.fillText("Damage Dealt: " + pDamage, 376, 360);
@@ -368,6 +510,7 @@ object CanvasDrawing {
   }
 
   def playerAttackTurn(): Unit = {
+    println("Player Attack Turn")
     attack();
     displayDamageDealt();
     setTimeout(1500)(enemyAttack());

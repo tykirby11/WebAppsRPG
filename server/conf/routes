@@ -28,3 +28,13 @@ GET		   /bosses				         controllers.DBController.bosses
 GET		   /items				         controllers.DBController.items
 GET		   /weapons				         controllers.DBController.weapons
 GET		   /classes				         controllers.DBController.classes
+GET		   /nodeBB				         controllers.DBController.nodeBB
+GET		   /nodeBP				         controllers.DBController.nodeBP
+GET		   /nodeBY				         controllers.DBController.nodeBY
+GET		   /nodeBR				         controllers.DBController.nodeBR
+GET		   /nodePP				         controllers.DBController.nodePP
+GET		   /nodePY				         controllers.DBController.nodePY
+GET		   /nodePR				         controllers.DBController.nodePR
+GET		   /nodeYY				         controllers.DBController.nodeYY
+GET		   /nodeYR				         controllers.DBController.nodeYR
+GET		   /nodeRR				         controllers.DBController.nodeRR

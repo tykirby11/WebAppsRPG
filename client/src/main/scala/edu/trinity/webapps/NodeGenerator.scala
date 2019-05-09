@@ -1,25 +1,27 @@
 package edu.trinity.webapps
 
-class NodeGenerator {
-  
+object NodeGenerator {
+
   //boss 5%
-  //shop 10%
-  //enemy 45% 
-  //event 40%
-   
-  def generateNode: Node = {
+  //weapon 10%
+  //event 30%
+  //enemy 55%
+
+  def getNodeType: NodeState.Value = {
+    var newNode = NodeState.black
     val randNum = scala.util.Random.nextInt(100)
-    if(randNum < 5) {
-      //generate boss
-    } else if(randNum < 15) {
-      //generate shop
-    } else if(randNum < 55) {
-      //generate event
-    } else if(randNum < 100) {
-      //generate enemy
-    }
     
-    return new ShopNode(NodeState.yellow); //Placeholder, should return generated Node
+    if (randNum < 5) {
+      //boss
+      newNode = NodeState.red
+    } else if (randNum < 15) {
+      //weapon
+      newNode = NodeState.yellow
+    } else if (randNum < 45) {
+      //item
+      newNode = NodeState.purple
+    }
+    newNode
   }
 }
 
@@ -27,3 +29,8 @@ object NodeState extends Enumeration {
   type NodeState = Value
   val red, yellow, purple, black = Value
 }
+
+//Call generate nodes in DBClient
+//DB client call NodeGenerator to get 2 node types
+//DB client creates nodes with relevant lists
+//DB client calls DrawMap with nodes as parameters
