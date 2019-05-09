@@ -16,12 +16,24 @@ import edu.trinity.webapps.shared.DBShared._
 object DBClient {
   var enemyList: List[EnemyEntry] = null
   
+ /* def drawPlayerClassToCanvas(): List[ClassEntry] = {
+    var classList: List[ClassEntry] = null
+    $.getJSON("/classes", success = (o, s, j) => {
+    for(c <- Json.parse(js.JSON.stringify(o)).as[List[ClassEntry]] {
+      val classNames = $(s"<p>${c.name}</p>")
+     
+    }
+    })
+    classList
+  }
+ */ 
+  
+
   def getEnemyList(): Unit = {
     $.getJSON("/enemies", success = (o, s, j) => {
       enemyList = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
-      println("this should be first")
+      println(enemyList)
     })
-    println("this should be second")
   }
   
   def updateEnemyList(elist: List[EnemyEntry]): Unit = {
