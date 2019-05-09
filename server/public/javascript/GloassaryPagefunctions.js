@@ -23,8 +23,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 300"	  
   document.getElementById("hp").innerHTML = "Health: 200"
   document.getElementById("speed").innerHTML= "Speed: 100"
-  document.getElementById("uses").hidden = true;
-
   })
 
 
@@ -33,7 +31,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 100"	  
   document.getElementById("hp").innerHTML = "Health: 300"
   document.getElementById("speed").innerHTML= "Speed: 200"
-  document.getElementById("uses").hidden = true;
   })
   
   document.getElementById("rouge").addEventListener("click", function(){
@@ -41,7 +38,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 100"	  
   document.getElementById("hp").innerHTML = "Health: 200"
   document.getElementById("speed").innerHTML= "Speed: 300"
-	  document.getElementById("uses").hidden = true;
   })
   
   document.getElementById("glitchGremlin").addEventListener("click", function(){
@@ -49,7 +45,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 100"	  
   document.getElementById("hp").innerHTML = "Health: 50"
   document.getElementById("speed").innerHTML= "Speed: 100"
-  document.getElementById("uses").hidden = true;
   })
   
   document.getElementById("theGreatSegfault").addEventListener("click", function(){
@@ -57,7 +52,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 200"	  
   document.getElementById("hp").innerHTML = "Health: 700"
   document.getElementById("speed").innerHTML= "Speed: 100"
-  document.getElementById("uses").hidden = true;
   })
   
   
@@ -66,7 +60,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 50"	  
   document.getElementById("hp").innerHTML = "Health: 50"
   document.getElementById("speed").innerHTML= "Speed: 150"
-  document.getElementById("uses").hidden = true;
   })
   
   
@@ -75,7 +68,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 50"	  
   document.getElementById("hp").innerHTML = "Health: 150"
   document.getElementById("speed").innerHTML= "Speed: 50"
-  document.getElementById("uses").hidden = true;
   })
   
   document.getElementById("wandOfCopyPaste").addEventListener("click", function(){
@@ -83,7 +75,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 200"	  
   document.getElementById("hp").innerHTML = "Health: N/A"
   document.getElementById("speed").innerHTML= "Speed: N/A"
-  document.getElementById("uses").hidden = true;
   })
   
   
@@ -92,7 +83,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 100"	  
   document.getElementById("hp").innerHTML = "Health: 100"
   document.getElementById("speed").innerHTML= "Speed: 100"
-  document.getElementById("uses").hidden = true;
   })
   
   
@@ -101,7 +91,6 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: N/A"	  
   document.getElementById("hp").innerHTML = "Health: N/A"
   document.getElementById("speed").innerHTML= "Speed: 300"
-  document.getElementById("uses").hidden = true;
   })
   
   document.getElementById("embeddingCrossbow").addEventListener("click", function(){
@@ -118,8 +107,7 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 300"	  
   document.getElementById("hp").innerHTML = "Health: N/A"
   document.getElementById("speed").innerHTML= "Speed: N/A"
-  document.getElementById("uses").hidden = false
-  document.getElementById("uses").innerHTML = "Uses: 3"
+
   })
   
   
@@ -128,8 +116,7 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: N/A"	  
   document.getElementById("hp").innerHTML = "Health: N/A"
   document.getElementById("speed").innerHTML= "Speed: 300"
-  document.getElementById("uses").hidden = false
-  document.getElementById("uses").innerHTML = "Uses: 3"	  
+  
   })
   
   document.getElementById("stickOfRam").addEventListener("click", function(){
@@ -137,8 +124,7 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: N/A"	  
   document.getElementById("hp").innerHTML = "Health: 300"
   document.getElementById("speed").innerHTML= "Speed: N/A"
-  document.getElementById("uses").hidden = false
-  document.getElementById("uses").innerHTML = "Uses: 3"
+
   })
   
   
