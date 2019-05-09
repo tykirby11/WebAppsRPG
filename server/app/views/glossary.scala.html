@@ -36,9 +36,8 @@
 	<div id = "categories">
 			
 		<div id ="tab">
-		<button class = "tablinks" onclick = "switchTabs(event, 'allItems')" id = "defaultOpen">All</button>
-			<br>
-		<button class = "tablinks" onclick = "switchTabs(event, 'items')">Items</button>
+
+		<button class = "tablinks" onclick = "switchTabs(event, 'items')" id = "defaultOpen">Items</button>
 			<br>
 		<button class = "tablinks" onclick = "switchTabs(event, 'weapons')">Weapons</button>
 			<br>
@@ -52,16 +51,6 @@
 		</div>
 	</div>
 			
-	<div id = "allItems" class="tabcontent">
-			<div >	
-					<button id = "tank" class ="itemButtons" >Tank </button>
-						<br>
-					<button id = "warrior" class ="itemButtons">Warrior</button>
-						<br>
-					<button id = "rouge" class ="itemButtons">Rouge</button>
-			</div>
-
-				</div>
 				
 				<div id = "characters" class = "tabcontent">
 					<button id = "tank" class ="itemButtons" >Tank </button>
@@ -70,6 +59,38 @@
 						<br>
 					<button id = "rouge" class ="itemButtons">Rouge</button>
 				
+				</div>
+				
+				<div id = "enemies" class = "tabcontent">
+					<button id = "glitchGremlin" class ="itemButtons" >Glitch Gremlin</button>
+						<br>
+					<button id = "smellyClass" class ="itemButtons">Smelly Class</button>
+						<br>
+					<button id = "codeTangler" class ="itemButtons">Code Tangler</button>
+				
+				</div>
+				
+				<div id = "bosses" class = "tabcontent">
+					<button id = "theGreatSegfault" class ="itemButtons" >The Great Segfault</button>
+				</div>
+				
+				<div id = "weapons" class = "tabcontent">
+					<button id = "wandOfCopyPaste" class ="itemButtons" >Wand Of Copy-Paste</button>
+						<br>
+					<button id = "ringOfConcurrency" class ="itemButtons">Ring Of Concurrency</button>
+						<br>
+					<button id = "multithreadedBoots" class ="itemButtons">Multithreaded Boots</button>
+						<br>
+					<button id = "embeddingCrossbow" class ="itemButtons">Embedding Crossbow</button>
+				
+				</div>
+				
+				<div id = "items" class = "tabcontent">
+					<button id = "debuggingSpray" class ="itemButtons" >Debugging Spray </button>
+						<br>
+					<button id = "overclocker" class ="itemButtons">Overclocker</button>
+						<br>
+					<button id = "stickOfRam" class ="itemButtons">Stick Of Ram</button>
 				</div>
 
 
@@ -85,6 +106,7 @@
 				<p id = "attack"></p>
 				<p id= "hp"> </p>
 				<p id = "speed"> </p>
+				<p id = "uses type="hidden""> </p>
 				<br>
 				<ul>Attacks</ul>
 					<li>Blunt: -- </li>
