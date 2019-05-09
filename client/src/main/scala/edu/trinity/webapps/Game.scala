@@ -101,9 +101,6 @@ object CanvasDrawing {
           case NodeState.yellow => println("you get a weapon!")
           case NodeState.red => println("you encounter a boss!")
         }
-        CanvasDrawing.drawEvent()
-        eventTriggered = true
-
       }
     }
   }
@@ -121,6 +118,7 @@ object CanvasDrawing {
 
   def drawLeftMapNode(nodeL: Node): Unit = {
     //left node
+    //println("Left Node Printed")
     context.rect(175, 240, 175, 75)
     context.stroke()
     context.lineWidth = "3"
@@ -137,6 +135,7 @@ object CanvasDrawing {
 
   def drawRightMapNode(nodeR: Node): Unit = {
     //right node
+    //println("Right Node Printed")
     context.rect(475, 240, 175, 75)
     context.stroke()
     context.lineWidth = "3"
@@ -163,7 +162,8 @@ object CanvasDrawing {
 
   //--------------------------------Random event screen------------------------------------//
   def drawEvent(): Unit = {
-
+    eventTriggered = true
+    
     handleEventInput();
 
     clearEventCanvas();
@@ -230,9 +230,18 @@ object CanvasDrawing {
     
     drawPlayerHealth();
 
-    drawEnemy();
+    drawEnemyInitial();
 
     arenaExists = true;
+    
+    if (enSpeed >= pSpeed) {
+      
+      println("Enemy Faster, so attack initially")
+      
+      enemyAttack();
+      
+    }
+    
   }
 
   //------------------------------combat mode helper functions----------------------------------//
@@ -241,12 +250,19 @@ object CanvasDrawing {
 
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
     canvas.onmousedown = (e: dom.MouseEvent) => {
+      
+      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
+
+      println(s"x: ${coords._1}, y: ${coords._2}")
+      println(arenaExists)
 
       //if attack is pressed and if button is showing
       if (((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) &&
         ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true) {
+        println("Attack Pressed, hasAttacked = " + hasAttacked + " enHealth = " + enHealth)
         if (enHealth > 0 && hasAttacked != true) {
           playerAttackTurn();
+          println("Attack Pressed Check")
         }
         if (enHealth > 0) {
           setTimeout(550)(drawEnemy());
@@ -254,7 +270,6 @@ object CanvasDrawing {
           drawZeroHealth();
         }
       }
-
       //if item button is pressed
       if (((e.clientX - canvas.offsetLeft) > 193 && (e.clientX - canvas.offsetLeft) < 316) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true) {
         if (itemVisible == true) {
@@ -272,6 +287,7 @@ object CanvasDrawing {
 
   def drawBattleWindow(): Unit = {
     //battle window
+    context.fillStyle = "black"
     context.rect(20, 20, 760, 390);
     context.stroke();
   }
@@ -381,12 +397,31 @@ object CanvasDrawing {
   }
 
   def enemyAttack(): Unit = {
+    println("Enemy Attack")
     pHealth -= enDamage;
     context.clearRect(40, 25, 200, 50);
     drawPlayerHealth();
+    checkPHealth();
     hasAttacked = false;
   }
 
+  def checkPHealth(): Unit = {
+    if(pHealth <= 0){
+      println("checked Health");
+      start();
+      resetStats();
+    }
+  }
+  
+  def resetStats(): Unit = {
+      pHealth = 100;
+      pSpeed = 40;
+      pDamage = 10;
+      score = 0;
+      gold = 100;
+      println(pHealth);
+  }
+  
   def displayDamageDealt(): Unit = {
     context.font = "25px Veranda";
     context.fillText("Damage Dealt: " + pDamage, 376, 360);
@@ -400,6 +435,7 @@ object CanvasDrawing {
   }
 
   def playerAttackTurn(): Unit = {
+    println("Player Attack Turn")
     attack();
     displayDamageDealt();
     setTimeout(1500)(enemyAttack());
