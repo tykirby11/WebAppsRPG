@@ -222,13 +222,6 @@ object CanvasDrawing {
           drawZeroHealth();
         }
       }
-    
-    def playerAttackTurn(): Unit = {
-      attack();
-      displayDamageDealt();
-      setTimeout(1500)(enemyAttack());
-      setTimeout(2000)(displayDamageReceived());
-    }
       
       //if item button is pressed
       if(((e.clientX - canvas.offsetLeft) > 193 && (e.clientX - canvas.offsetLeft) < 316) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){
@@ -242,6 +235,13 @@ object CanvasDrawing {
           drawInventoryStatusCollapse();
         }
       }
+    }
+    
+    def playerAttackTurn(): Unit = {
+      attack();
+      displayDamageDealt();
+      setTimeout(1500)(enemyAttack());
+      setTimeout(2000)(displayDamageReceived());
     }
     
     def drawInventoryStatusExpand(): Unit = {
