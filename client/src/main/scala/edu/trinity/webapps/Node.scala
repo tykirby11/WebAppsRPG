@@ -1,5 +1,6 @@
 package edu.trinity.webapps
 
-trait Node {
+trait Node[A] {
   val state: NodeState.Value
+  val dbList: List[A]
 }
