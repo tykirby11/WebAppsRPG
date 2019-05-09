@@ -1,6 +1,7 @@
 package edu.trinity.webapps
 
-trait Node[A] {
+trait Node {
   val state: NodeState.Value
-  val dbList: List[A]
+  val dbList: List[Any]
+  def rollSelection: Any
 }
