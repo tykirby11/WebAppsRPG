@@ -59,8 +59,8 @@ object DBClient {
       println("BP/PB")
       $.getJSON("/nodeBP", success = (o, s, j) => {
         println(js.JSON.stringify(o))
-        val enemies = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
-        val items = Json.parse(js.JSON.stringify(o)).as[List[ItemEntry]]
+        val (enemies, items) = Json.parse(js.JSON.stringify(o)).as[(List[EnemyEntry], List[ItemEntry])]
+//        val items = Json.parse(js.JSON.stringify(o)).as[List[ItemEntry]]
         val node1 = new MapNode[EnemyEntry](NodeState.black, enemies)
         val node2 = new MapNode[ItemEntry](NodeState.purple, items)
         CanvasDrawing.drawMap(node1, node2)
@@ -69,8 +69,7 @@ object DBClient {
       println("BY/YB")
       $.getJSON("/nodeBY", success = (o, s, j) => {
         println(js.JSON.stringify(o))
-        val enemies = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
-        val weapons = Json.parse(js.JSON.stringify(o)).as[List[WeaponEntry]]
+        val (enemies, weapons) = Json.parse(js.JSON.stringify(o)).as[(List[EnemyEntry], List[WeaponEntry])]
         val node1 = new MapNode[EnemyEntry](NodeState.black, enemies)
         val node2 = new MapNode[WeaponEntry](NodeState.yellow, weapons)
         CanvasDrawing.drawMap(node1, node2)
@@ -79,8 +78,7 @@ object DBClient {
       println("BR/RB")
       $.getJSON("/nodeBR", success = (o, s, j) => {
         println(js.JSON.stringify(o))
-        val enemies = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
-        val bosses = Json.parse(js.JSON.stringify(o)).as[List[BossEntry]]
+        val (enemies, bosses) = Json.parse(js.JSON.stringify(o)).as[(List[EnemyEntry], List[BossEntry])]
         val node1 = new MapNode[EnemyEntry](NodeState.black, enemies)
         val node2 = new MapNode[BossEntry](NodeState.red, bosses)
         CanvasDrawing.drawMap(node1, node2)
@@ -98,8 +96,7 @@ object DBClient {
       println("PY/YP")
       $.getJSON("/nodePY", success = (o, s, j) => {
         println(js.JSON.stringify(o))
-        val weapons = Json.parse(js.JSON.stringify(o)).as[List[WeaponEntry]]
-        val items = Json.parse(js.JSON.stringify(o)).as[List[ItemEntry]]
+        val (weapons, items) = Json.parse(js.JSON.stringify(o)).as[(List[WeaponEntry], List[ItemEntry])]
         val node1 = new MapNode[WeaponEntry](NodeState.yellow, weapons)
         val node2 = new MapNode[ItemEntry](NodeState.purple, items)
         CanvasDrawing.drawMap(node1, node2)
@@ -108,8 +105,7 @@ object DBClient {
       println("PR/RP")
       $.getJSON("/nodePR", success = (o, s, j) => {
         println(js.JSON.stringify(o))
-        val bosses = Json.parse(js.JSON.stringify(o)).as[List[BossEntry]]
-        val items = Json.parse(js.JSON.stringify(o)).as[List[ItemEntry]]
+        val (bosses, items) = Json.parse(js.JSON.stringify(o)).as[(List[BossEntry], List[ItemEntry])]
         val node1 = new MapNode[BossEntry](NodeState.red, bosses)
         val node2 = new MapNode[ItemEntry](NodeState.purple, items)
         CanvasDrawing.drawMap(node1, node2)
@@ -127,8 +123,7 @@ object DBClient {
       println("YR/RY")
       $.getJSON("/nodeYR", success = (o, s, j) => {
         println(js.JSON.stringify(o))
-        val weapons = Json.parse(js.JSON.stringify(o)).as[List[WeaponEntry]]
-        val bosses = Json.parse(js.JSON.stringify(o)).as[List[BossEntry]]
+        val (weapons, bosses) = Json.parse(js.JSON.stringify(o)).as[(List[WeaponEntry], List[BossEntry])]
         val node1 = new MapNode[WeaponEntry](NodeState.yellow, weapons)
         val node2 = new MapNode[BossEntry](NodeState.red, bosses)
         CanvasDrawing.drawMap(node1, node2)

@@ -40,6 +40,12 @@ object CanvasDrawing {
   private var enSpeed = 30;
   private var enDamage = 5;
   private var reward = 50
+  
+  //Event
+  private var itemName = ""
+  private var itemHpMod = 0
+  private var itemSpdMod = 0
+  private var itemAtkMod = 0
 
   //Enemy sprites
   private val glitch = dom.document.getElementById("glitch")
@@ -56,6 +62,9 @@ object CanvasDrawing {
   //-------------------------------beginning of main map screen----------------------------//
   def drawMap(nodeL: Node, nodeR: Node): Unit = {
 
+    println(nodeL.dbList)
+    println(nodeR.dbList)
+    
     score += 1
 
     handleMapInput(nodeL, nodeR);
@@ -87,9 +96,10 @@ object CanvasDrawing {
         println("clicked left node, this should do something!")
         nodeL.state match {
           case NodeState.black => drawArena(nodeL.asInstanceOf[MapNode[EnemyEntry]].rollSelection)
-          case NodeState.purple => drawEvent()
-          case NodeState.yellow => println("you get a weapon!")
-          case NodeState.red => println("you encounter a boss!")
+          case NodeState.purple => drawItemEvent(nodeL.asInstanceOf[MapNode[ItemEntry]].rollSelection)
+          case NodeState.yellow => drawWeaponEvent(nodeL.asInstanceOf[MapNode[WeaponEntry]].rollSelection)
+          case NodeState.red => drawBossArena(nodeL.asInstanceOf[MapNode[BossEntry]].rollSelection)
+          
         }
       } //if right node is pressed, trigger event 
       else if (((e.clientX - canvas.offsetLeft > 477) && (e.clientX - canvas.offsetLeft < 652)) &&
@@ -97,9 +107,9 @@ object CanvasDrawing {
         println("clicked right node, this should do something!")
         nodeR.state match {
           case NodeState.black => drawArena(nodeR.asInstanceOf[MapNode[EnemyEntry]].rollSelection)
-          case NodeState.purple => drawEvent()
-          case NodeState.yellow => println("you get a weapon!")
-          case NodeState.red => println("you encounter a boss!")
+          case NodeState.purple => drawItemEvent(nodeR.asInstanceOf[MapNode[ItemEntry]].rollSelection)
+          case NodeState.yellow => drawWeaponEvent(nodeR.asInstanceOf[MapNode[WeaponEntry]].rollSelection)
+          case NodeState.red => drawBossArena(nodeR.asInstanceOf[MapNode[BossEntry]].rollSelection)
         }
       }
     }
@@ -161,7 +171,12 @@ object CanvasDrawing {
   //--------------------------------end of main map screen---------------------------------//
 
   //--------------------------------Random event screen------------------------------------//
-  def drawEvent(): Unit = {
+  def drawItemEvent(item: ItemEntry): Unit = {
+    itemName = item.name
+    itemHpMod = item.hpmod
+    itemAtkMod = item.atkmod
+    itemSpdMod = item.spdmod
+    
     eventTriggered = true
     
     handleEventInput();
@@ -171,6 +186,23 @@ object CanvasDrawing {
     drawEventElements();
 
   }
+  
+  def drawWeaponEvent(weapon: WeaponEntry): Unit = {
+    itemName = weapon.name
+    itemHpMod = weapon.hpmod
+    itemAtkMod = weapon.atkmod
+    itemSpdMod = weapon.spdmod
+    
+    eventTriggered = true
+    
+    handleEventInput();
+
+    clearEventCanvas();
+
+    drawEventElements();
+
+  }
+  
   def handleEventInput(): Unit = {
     //handling user input for an event
     dom.document.onmousedown = (e: dom.MouseEvent) => {
@@ -194,14 +226,57 @@ object CanvasDrawing {
   def drawEventElements(): Unit = {
     val eventBackground = dom.document.getElementById("eventBackground")
     context.drawImage(eventBackground, 0, 0, canvas.width, canvas.height)
-    context.fillText("You've Found a Lost Treasure Chest", 250, 120)
-    context.fillText("Gold +50!", 250, 285)
+    context.fillText("You've Found a " + itemName + " !", 250, 120)
+    //context.fillText("Gold +50!", 250, 285)
     context.fillText("Click Here to Continue", 250, 430)
   }
   //--------------------------------End of event screen------------------------------------//
 
   //combat mode
   def drawArena(enemy: EnemyEntry): Unit = {
+    //Update enemy vars
+    enName = enemy.name
+    enHealth = enemy.hp
+    enSpeed = enemy.spd
+    enDamage = enemy.atk
+    reward = enemy.hp
+
+    //Draw arena
+    clearCombatCanvas();
+
+    handleCombatInput()
+
+    drawBattleWindow();
+    
+    drawUserArea();
+    
+    drawAttackButton();
+    
+    drawItemButton();
+
+    drawHealthDivider();
+    
+    drawUIDivider();
+    
+    drawBossName();
+    
+    drawPlayerHealth();
+
+    drawEnemyInitial();
+
+    arenaExists = true;
+    
+    if (enSpeed >= pSpeed) {
+      
+      println("Enemy Faster, so attack initially")
+      
+      enemyAttack();
+      
+    }
+    
+  }
+  
+  def drawBossArena(enemy: BossEntry): Unit = {
     //Update enemy vars
     enName = enemy.name
     enHealth = enemy.hp

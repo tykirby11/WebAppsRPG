@@ -12,7 +12,7 @@ import slick.jdbc.JdbcProfile
 import scala.concurrent.ExecutionContext
 
 import slick.jdbc.MySQLProfile.api._ // This line determines what type of database you are connecting to.
-import play.api.libs.json.Json
+import play.api.libs.json._
 
 import edu.trinity.webapps.shared.DBShared._
 
@@ -53,22 +53,19 @@ class DBController @Inject() (protected val dbConfigProvider: DatabaseConfigProv
   def nodeBP = Action.async { implicit request =>
     val enemies = DBQueries.fetchEnemies(db)
     val items = DBQueries.fetchItems(db)
-    enemies.map(e => Ok(Json.toJson(e)))
-    items.map(e => Ok(Json.toJson(e)))
+    for(e <- enemies; i <- items) yield Ok(Json.toJson((e, i)))
   }
 
   def nodeBY = Action.async { implicit request =>
     val enemies = DBQueries.fetchEnemies(db)
     val weapons = DBQueries.fetchWeapons(db)
-    enemies.map(e => Ok(Json.toJson(e)))
-    weapons.map(e => Ok(Json.toJson(e)))
+    for(e <- enemies; i <- weapons) yield Ok(Json.toJson((e, i)))
   }
 
   def nodeBR = Action.async { implicit request =>
     val enemies = DBQueries.fetchEnemies(db)
     val bosses = DBQueries.fetchBosses(db)
-    enemies.map(e => Ok(Json.toJson(e)))
-    bosses.map(e => Ok(Json.toJson(e)))
+    for(e <- enemies; i <- bosses) yield Ok(Json.toJson((e, i)))
   }
 
   def nodePP = Action.async { implicit request =>
@@ -79,15 +76,13 @@ class DBController @Inject() (protected val dbConfigProvider: DatabaseConfigProv
   def nodePY = Action.async { implicit request =>
     val weapons = DBQueries.fetchWeapons(db)
     val items = DBQueries.fetchItems(db)
-    weapons.map(e => Ok(Json.toJson(e)))
-    items.map(e => Ok(Json.toJson(e)))
+    for(e <- weapons; i <- items) yield Ok(Json.toJson((e, i)))
   }
 
   def nodePR = Action.async { implicit request =>
     val bosses = DBQueries.fetchBosses(db)
     val items = DBQueries.fetchItems(db)
-    bosses.map(e => Ok(Json.toJson(e)))
-    items.map(e => Ok(Json.toJson(e)))
+    for(e <- bosses; i <- items) yield Ok(Json.toJson((e, i)))
   }
 
   def nodeYY = Action.async { implicit request =>
@@ -98,8 +93,7 @@ class DBController @Inject() (protected val dbConfigProvider: DatabaseConfigProv
   def nodeYR = Action.async { implicit request =>
     val weapons = DBQueries.fetchWeapons(db)
     val bosses = DBQueries.fetchBosses(db)
-    weapons.map(e => Ok(Json.toJson(e)))
-    bosses.map(e => Ok(Json.toJson(e)))
+    for(e <- weapons; i <- bosses) yield Ok(Json.toJson((e, i)))
   }
 
   def nodeRR = Action.async { implicit request =>
