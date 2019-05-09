@@ -3,12 +3,12 @@ package edu.trinity.webapps
 import edu.trinity.webapps.shared.SharedMessages
 import org.scalajs.dom
 
-object ScalaJSExample {
+object ScalandiaMain {
 
   def main(args: Array[String]): Unit = {
     dom.window.onload = (e: dom.raw.Event) => {
 
-      if(dom.document.getElementById("gameCanvas") != null) CanvasMapDrawing.drawMap()//CanvasDrawing.drawArena()
+    if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawMap()//CanvasDrawing.drawArena()
     }
   }
   
