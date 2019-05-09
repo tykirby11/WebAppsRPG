@@ -27,10 +27,10 @@ object CanvasDrawing {
   //boolean to see if player has attacked
   private var hasAttacked = false;
 
-  //Player stats
-  private var pHealth = 40;
+  //Player stats 
+  private var pHealth = 1000;
   private var pSpeed = 40;
-  private var pDamage = 10;
+  private var pDamage = 300;
   private var score = 0;
   private var gold = 100;
 
@@ -103,6 +103,7 @@ object CanvasDrawing {
         }
         CanvasDrawing.drawEvent()
         eventTriggered = true
+
       }
     }
   }
@@ -138,14 +139,15 @@ object CanvasDrawing {
     //right node
     context.rect(475, 240, 175, 75)
     context.stroke()
+    context.lineWidth = "3"
     context.fillStyle = "white"
     context.font = "20px Arial"
     context.fillText("Go Right For:", 480, 271)
     nodeR.state match {
-      case NodeState.black => context.fillText("Enemy Encounter", 180, 300)
-      case NodeState.purple => context.fillText("Item", 180, 300)
-      case NodeState.yellow => context.fillText("Weapon", 180, 300)
-      case NodeState.red => context.fillText("Boss", 180, 300)
+      case NodeState.black => context.fillText("Enemy Encounter", 480, 300)
+      case NodeState.purple => context.fillText("Item", 480, 300)
+      case NodeState.yellow => context.fillText("Weapon", 480, 300)
+      case NodeState.red => context.fillText("Boss", 480, 300)
     }
   }
 
@@ -228,7 +230,7 @@ object CanvasDrawing {
     
     drawPlayerHealth();
 
-    drawEnemyInitial();
+    drawEnemy();
 
     arenaExists = true;
   }
@@ -374,6 +376,7 @@ object CanvasDrawing {
       enHealth = 0;
       context.clearRect(300, 100, 192, 192);
       gold += reward;
+      start()
     }
   }
 

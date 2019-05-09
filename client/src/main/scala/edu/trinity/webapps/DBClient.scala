@@ -43,6 +43,8 @@ object DBClient {
   def generateNodes(): Unit = {
     val node1Type = NodeGenerator.getNodeType
     val node2Type = NodeGenerator.getNodeType
+    println(node1Type)
+    println(node2Type)
 
     if ((node1Type == NodeState.black) && (node2Type == NodeState.black)) {
       $.getJSON("/nodeBB", success = (o, s, j) => {
