@@ -101,8 +101,6 @@ object CanvasDrawing {
           case NodeState.yellow => println("you get a weapon!")
           case NodeState.red => println("you encounter a boss!")
         }
-        CanvasDrawing.drawEvent()
-        eventTriggered = true
       }
     }
   }
@@ -124,7 +122,7 @@ object CanvasDrawing {
     context.rect(175, 240, 175, 75)
     context.stroke()
     context.lineWidth = "3"
-    context.fillStyle = "black"
+    context.fillStyle = "white"
     context.font = "20px Arial"
     context.fillText("Go Left For:", 180, 271)
     nodeL.state match {
@@ -140,7 +138,7 @@ object CanvasDrawing {
     //println("Right Node Printed")
     context.rect(475, 240, 175, 75)
     context.stroke()
-    context.fillStyle = "black"
+    context.fillStyle = "white"
     context.font = "20px Arial"
     context.fillText("Go Right For:", 480, 271)
     nodeR.state match {
@@ -163,7 +161,8 @@ object CanvasDrawing {
 
   //--------------------------------Random event screen------------------------------------//
   def drawEvent(): Unit = {
-
+    eventTriggered = true
+    
     handleEventInput();
 
     clearEventCanvas();
@@ -287,6 +286,7 @@ object CanvasDrawing {
 
   def drawBattleWindow(): Unit = {
     //battle window
+    context.fillStyle = "black"
     context.rect(20, 20, 760, 390);
     context.stroke();
   }

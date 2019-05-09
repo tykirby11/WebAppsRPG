@@ -96,20 +96,20 @@ li a:hover:not(.active) {
   background-color: #111;
 }
 
-.active {
+/* .active {
   background-color: #4CAF50;
 
   margin: 5px 10px 7px 12px;
   white-space:nowrap;
   
-}
+} */
 .itemButtons{
   background-color: rgb(169,169,169);
   border: none;
   color: white;
   padding: 5px 40px;
   width:220px;
-  
+  border-radius: 5px 5px 5px 5px;
   margin: 5px 10px 7px 12px;
   white-space:nowrap;
 }
