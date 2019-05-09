@@ -26,6 +26,15 @@ object CanvasDrawing {
 
   //boolean to see if player has attacked
   private var hasAttacked = false;
+  
+  private var eventActive = false;
+  
+  //Player stats defaults 
+  private val pHealthDefault = 1000;
+  private val pSpeedDefault = 40;
+  private val pDamageDefault = 300;
+  private val scoreDefault = 0;
+  private val goldDefault = 100;
 
   //Player stats 
   private var pHealth = 1000;
@@ -49,6 +58,10 @@ object CanvasDrawing {
 
   //Enemy sprites
   private val glitch = dom.document.getElementById("glitch")
+  private val segFault = dom.document.getElementById("segFault")
+  private val stinkyClass = dom.document.getElementById("stinkyClass")
+  private val codeTangler = dom.document.getElementById("codeTangler")
+  private var sprite = glitch
 
   private val bw = 125
   private val bh = 50
@@ -212,8 +225,9 @@ object CanvasDrawing {
 
       //if continue area is pressed, trigger event
       if (((e.clientX - canvas.offsetLeft > 248) && (e.clientX - canvas.offsetLeft < 457)) &&
-        ((e.clientY - canvas.offsetTop > 408) && (e.clientY - canvas.offsetTop < 439))) {
+        ((e.clientY - canvas.offsetTop > 408) && (e.clientY - canvas.offsetTop < 439)) && eventActive == true) {
         start()
+        eventActive = false
       }
     }
   }
@@ -227,8 +241,9 @@ object CanvasDrawing {
     val eventBackground = dom.document.getElementById("eventBackground")
     context.drawImage(eventBackground, 0, 0, canvas.width, canvas.height)
     context.fillText("You've Found a " + itemName + " !", 250, 120)
-    //context.fillText("Gold +50!", 250, 285)
+    context.fillText("Stats: (HP + " + itemHpMod + " ATK +  " + itemAtkMod + " SPD +  " + itemSpdMod + ")", 250, 285)
     context.fillText("Click Here to Continue", 250, 430)
+    eventActive = true
   }
   //--------------------------------End of event screen------------------------------------//
 
@@ -240,11 +255,26 @@ object CanvasDrawing {
     enSpeed = enemy.spd
     enDamage = enemy.atk
     reward = enemy.hp
-
+    if(enemy.enemyid == 1){
+      sprite = glitch
+    }
+    else if(enemy.enemyid == 2){
+      sprite = stinkyClass
+    }
+    else if(enemy.enemyid == 3){
+      sprite = codeTangler
+    }
+    
     //Draw arena
     clearCombatCanvas();
+    
+    //println("Reached Rects")
+    
+    clearRects();
 
     handleCombatInput()
+    
+    
 
     drawBattleWindow();
     
@@ -261,6 +291,8 @@ object CanvasDrawing {
     drawBossName();
     
     drawPlayerHealth();
+    
+    clearRects();
 
     drawEnemyInitial();
 
@@ -283,9 +315,17 @@ object CanvasDrawing {
     enSpeed = enemy.spd
     enDamage = enemy.atk
     reward = enemy.hp
+    
+    if(enemy.bossid == 1){
+      sprite = segFault
+    }
 
     //Draw arena
     clearCombatCanvas();
+    
+    //println("Reached Rects")
+    
+    
 
     handleCombatInput()
 
@@ -306,6 +346,8 @@ object CanvasDrawing {
     drawPlayerHealth();
 
     drawEnemyInitial();
+    
+    clearRects();
 
     arenaExists = true;
     
@@ -425,7 +467,7 @@ object CanvasDrawing {
   }
 
   def drawEnemyInitial(): Unit = {
-    context.drawImage(glitch, 300, 100, 192, 192);
+    context.drawImage(sprite, 300, 100, 192, 192);
     compareSpeed();
     drawEnemyHealth();
   }
@@ -445,7 +487,7 @@ object CanvasDrawing {
   }
 
   def drawEnemy(): Unit = {
-    context.drawImage(glitch, 300, 100, 192, 192);
+    context.drawImage(sprite, 300, 100, 192, 192);
     drawEnemyHealth();
   }
 
@@ -467,7 +509,7 @@ object CanvasDrawing {
       enHealth = 0;
       context.clearRect(300, 100, 192, 192);
       gold += reward;
-      start()
+      setTimeout(4000)(start())
     }
   }
 
@@ -483,17 +525,17 @@ object CanvasDrawing {
   def checkPHealth(): Unit = {
     if(pHealth <= 0){
       println("checked Health");
-      start();
+      setTimeout(4000)(start());
       resetStats();
     }
   }
   
   def resetStats(): Unit = {
-      pHealth = 100;
-      pSpeed = 40;
-      pDamage = 10;
-      score = 0;
-      gold = 100;
+      pHealth = pHealthDefault;
+      pSpeed = pSpeedDefault;
+      pDamage = pDamageDefault;
+      score = scoreDefault;
+      gold = goldDefault;
       println(pHealth);
   }
   
@@ -541,7 +583,9 @@ object CanvasDrawing {
   def addInvItem(): Unit = {
     val conTable = dom.document.getElementById("consumables").asInstanceOf[HTMLElement];
     val tableHeaderItem = dom.document.createElement("th").asInstanceOf[HTMLElement];
-    tableHeaderItem.innerHTML = "<p>Debugging Spray</p>";
+    if(){
+      tableHeaderItem.innerHTML = "<p>Debugging Spray</p>";
+    }
     val tableHeaderBut = dom.document.createElement("th").asInstanceOf[HTMLElement];
     tableHeaderBut.innerHTML = "<button>Use</button>";
     tableHeaderBut.id = "useItem";
@@ -586,6 +630,17 @@ object CanvasDrawing {
   def clearCombatCanvas(): Unit = {
     //clear out map area for event
     context.clearRect(0, 0, canvas.width, canvas.height)
+    context.stroke()
+    context.lineWidth = "3"
+    context.fillStyle = "white"
+  }
+  
+  def clearRects(): Unit = {
+    context.clearRect(165, 230, 190, 90)
+    context.clearRect(465, 230, 190, 90)
+    //context.lineWidth = "3"
+    context.fillStyle = "black"
+    println("Rect should be gone")
   }
 
   def drawBorder(xPos: Int, yPos: Int, width: Int, height: Int, thickness: Int = 1): Unit = {

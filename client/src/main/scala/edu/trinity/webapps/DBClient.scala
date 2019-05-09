@@ -8,6 +8,7 @@ import scala.scalajs.js.annotation._
 import play.api.libs.json._
 import play.api.libs.json.Reads._
 import play.api.libs.functional.syntax._
+import scala.scalajs.js.timers._
 
 import edu.trinity.webapps.shared.DBShared._
 
@@ -138,6 +139,7 @@ object DBClient {
         CanvasDrawing.drawMap(node1, node2)
       })
     }
+    println("Drew Map")
   }
 
   def updateEnemyList(elist: List[EnemyEntry]): Unit = {
