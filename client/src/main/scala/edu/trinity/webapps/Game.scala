@@ -28,7 +28,7 @@ object CanvasDrawing {
   private var hasAttacked = false;
 
   //Player stats
-  private var pHealth = 40;
+  private var pHealth = 100;
   private var pSpeed = 40;
   private var pDamage = 10;
   private var score = 0;
@@ -120,10 +120,11 @@ object CanvasDrawing {
 
   def drawLeftMapNode(nodeL: Node): Unit = {
     //left node
+    //println("Left Node Printed")
     context.rect(175, 240, 175, 75)
     context.stroke()
     context.lineWidth = "3"
-    context.fillStyle = "white"
+    context.fillStyle = "black"
     context.font = "20px Arial"
     context.fillText("Go Left For:", 180, 271)
     nodeL.state match {
@@ -136,16 +137,17 @@ object CanvasDrawing {
 
   def drawRightMapNode(nodeR: Node): Unit = {
     //right node
+    //println("Right Node Printed")
     context.rect(475, 240, 175, 75)
     context.stroke()
-    context.fillStyle = "white"
+    context.fillStyle = "black"
     context.font = "20px Arial"
     context.fillText("Go Right For:", 480, 271)
     nodeR.state match {
-      case NodeState.black => context.fillText("Enemy Encounter", 180, 300)
-      case NodeState.purple => context.fillText("Item", 180, 300)
-      case NodeState.yellow => context.fillText("Weapon", 180, 300)
-      case NodeState.red => context.fillText("Boss", 180, 300)
+      case NodeState.black => context.fillText("Enemy Encounter", 480, 300)
+      case NodeState.purple => context.fillText("Item", 480, 300)
+      case NodeState.yellow => context.fillText("Weapon", 480, 300)
+      case NodeState.red => context.fillText("Boss", 480, 300)
     }
   }
 
@@ -231,6 +233,15 @@ object CanvasDrawing {
     drawEnemyInitial();
 
     arenaExists = true;
+    
+    if (enSpeed >= pSpeed) {
+      
+      println("Enemy Faster, so attack initially")
+      
+      enemyAttack();
+      
+    }
+    
   }
 
   //------------------------------combat mode helper functions----------------------------------//
@@ -239,12 +250,19 @@ object CanvasDrawing {
 
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
     canvas.onmousedown = (e: dom.MouseEvent) => {
+      
+      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
+
+      println(s"x: ${coords._1}, y: ${coords._2}")
+      println(arenaExists)
 
       //if attack is pressed and if button is showing
       if (((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) &&
         ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true) {
+        println("Attack Pressed, hasAttacked = " + hasAttacked + " enHealth = " + enHealth)
         if (enHealth > 0 && hasAttacked != true) {
           playerAttackTurn();
+          println("Attack Pressed Check")
         }
         if (enHealth > 0) {
           setTimeout(550)(drawEnemy());
@@ -370,16 +388,36 @@ object CanvasDrawing {
       enHealth = 0;
       context.clearRect(300, 100, 192, 192);
       gold += reward;
+      start();
     }
   }
 
   def enemyAttack(): Unit = {
+    println("Enemy Attack")
     pHealth -= enDamage;
     context.clearRect(40, 25, 200, 50);
     drawPlayerHealth();
+    checkPHealth();
     hasAttacked = false;
   }
 
+  def checkPHealth(): Unit = {
+    if(pHealth <= 0){
+      println("checked Health");
+      start();
+      resetStats();
+    }
+  }
+  
+  def resetStats(): Unit = {
+      pHealth = 100;
+      pSpeed = 40;
+      pDamage = 10;
+      score = 0;
+      gold = 100;
+      println(pHealth);
+  }
+  
   def displayDamageDealt(): Unit = {
     context.font = "25px Arial";
     context.fillText("Damage Dealt: " + pDamage, 376, 360);
@@ -393,6 +431,7 @@ object CanvasDrawing {
   }
 
   def playerAttackTurn(): Unit = {
+    println("Player Attack Turn")
     attack();
     displayDamageDealt();
     setTimeout(1500)(enemyAttack());

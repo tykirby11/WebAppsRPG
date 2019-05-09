@@ -45,6 +45,7 @@ object DBClient {
     val node2Type = NodeGenerator.getNodeType
 
     if ((node1Type == NodeState.black) && (node2Type == NodeState.black)) {
+      println("BB")
       $.getJSON("/nodeBB", success = (o, s, j) => {
         val enemies = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
         val node1 = new MapNode[EnemyEntry](NodeState.black, enemies)
