@@ -2,51 +2,56 @@
 @(param: Any)
 
 @main("Leaderboard"){
+
+<head>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/leaderboards.css")">
+</head>
+
 	<div id = "lead-container">
 	
-		<h2>Web Apps RPG</h2>
+		<div id="nav">
+			<ul>
+				<li><a href = "/">Main Menu</a></li>
+				<li><a href = "game">Play Game</a></li>
+				<li><a href = "glossary">Glossary</a></li>
+			</ul>
+		</div>
+	
+		<div id = "top">
+			<h2>Web Apps RPG</h2>
 		
-		<h3>Player Leaderboards</h3>
-
-		<button type="submit" value="Submit">Enter the depths of the Coding Block</button>
-		
-		<div id ="lead-table">
-		
-			<table>
-		
-				<tr>
-					
-					<th>Player</th>
-					<th>Distance Traveled </th>
-		
-				</tr>
-		
-		
-				<tr>
-						
-					<td>Ty Kirby</td>
-					<td>3 Nodes</td>
-				
-				</tr>
-				
-				<tr>
-						
-					<td>Austin Gieselman</td>
-					<td>1 Nodes</td>
-				
-				</tr>
-				
-				<tr>
-						
-					<td>Jorgen Viltoft</td>
-					<td>7 Nodes</td>
-				
-				</tr>
-		
-			</table>
-		
+			<h3>High Scores of the Befallen</h3>
 		</div>
 		
+		<div id = "bottom">	
+			<div id ="lead-table">
+			
+				<table>
+			
+					<tr>
+						<th>Player</th>
+						<th>Distance Traveled </th>
+					</tr>
+			
+					<tr>
+						<td>Ty Kirby</td>
+						<td>3 Nodes</td>
+					</tr>
+					
+					<tr>
+						<td>Austin Gieselman</td>
+						<td>1 Nodes</td>
+					</tr>
+					
+					<tr>
+						<td>Jorgen Viltoft</td>
+						<td>7 Nodes</td>
+					</tr>
+			
+				</table>
+			
+			</div>
+		</div>
 
 	
 	</div>	

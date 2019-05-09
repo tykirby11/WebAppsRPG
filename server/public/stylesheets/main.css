@@ -75,55 +75,9 @@
 	
 }
 
-
-#lead-container button{
-	margin-left:55em;
-	margin-bottom: 2em;
-}
-
-#lead-table{
-	width: 50%;
-	border: 2px black solid;
-	
-	padding: 3em;
-	
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#lead-table th{
-	border: 1px solid black;
-}
-
-#lead-table td{
-	border: 1px solid black;
-}
-
-#lead-table table{
-	width: 50%;
-	border: 2px black solid;
-	
-	padding: 3em;
-	
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#lead-container h2{
-	text-align: center;
-}
-
-#lead-container h3{
-	text-align: center;
-}
-
 #game-container table{
 	width: 50%;
 	border: 2px solid black;
-}
-
-#game h3{
-
 }
 
 #gameCanvas{
@@ -131,10 +85,6 @@
 	margin-right: auto;
 	display: block;
 }	
-
-#game-container{
-}
-	
 
 #shop{
 	width: 45%;
@@ -290,6 +240,7 @@ li a:hover:not(.active) {
 #shop-inner{
 	margin-left:auto;
 	margin-right: auto;
+	
 	
 	background-color: #81AE9D;
 }
