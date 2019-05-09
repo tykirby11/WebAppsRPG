@@ -270,7 +270,6 @@ object CanvasDrawing {
           drawZeroHealth();
         }
       }
-
       //if item button is pressed
       if (((e.clientX - canvas.offsetLeft) > 193 && (e.clientX - canvas.offsetLeft) < 316) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true) {
         if (itemVisible == true) {

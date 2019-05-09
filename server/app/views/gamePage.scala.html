@@ -1,8 +1,21 @@
 @()
 
 @main("Heroes of the Code Block"){
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/leaderboards.css")">
+</head>
 
 <div id = "gamePageContainer"> 
+
+		<div id="nav">
+			<ul>
+				<li><a href = "/">Main Menu</a></li>
+				<li><a href = "glossary">Glossary</a></li>
+				<li><a href = "leaderboard">Leaderboards</a></li>
+			</ul>
+		</div>
+	
 	<div id = "game-container">
 	
 	  <div id = "game-headers-wrapper">
