@@ -36,6 +36,13 @@ object DBClient {
     })
   }
   
+  def getEnemy(handler: EnemyEntry => Unit): Unit = {
+    $.getJSON("/enemies", success = (o, s, j) => {
+      val enemy = Json.parse(js.JSON.stringify(o)).as[List[EnemyEntry]]
+      handler(enemy.head)
+    })
+  }
+  
   def updateEnemyList(elist: List[EnemyEntry]): Unit = {
     println(elist)
     enemyList = elist
