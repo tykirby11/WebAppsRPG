@@ -5,27 +5,22 @@
 
 @main("Glossary"){
 <head>
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/glossary.css")">
 </head>
 
-
-
-	
 	<div id = "glossary-container">
+	
+		<div id="nav">
+			<ul>
+				<li><a href = "/">Main Menu</a></li>
+				<li><a href = "game">Play Game</a></li>
+				<li><a href = "leaderboard">Leaderboards</a></li>
+			</ul>
+		</div>
 		
 		<div id ="gloss-flex-head">
 		
 			<h2 id = "gloss-header">Web Apps RPG</h2>
-		
-			<div id = "search">
-				<input type = "text" placeholder = "Search...">
-				<button type = "submit">Search</button>
-			</div>
 		
 		</div>
 
@@ -108,9 +103,7 @@
 				<p id = "speed"> </p>
 				<p id = "uses type="hidden""> </p>
 				<br>
-				<ul>Attacks</ul>
-					<li>Blunt: -- </li>
-					<li>Fire Spell: -- </li>
+
 					
 			</div>
 		
