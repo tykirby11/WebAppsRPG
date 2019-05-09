@@ -2,24 +2,36 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="clientX" key="selection"/>
+		<item value="fillText" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="strokeText"/>
+			<item value="fill"/>
+			<item value="Arial"/>
+			<item value="fillText"/>
+			<item value="beginPath"/>
+			<item value="println"/>
+			<item value="CanvasMapDrawing"/>
+			<item value="x"/>
 			<item value="clientx"/>
 			<item value="font"/>
 			<item value="sharp"/>
 		</list>
 		<list key="replacehistory">
+			<item value="fillText"/>
+			<item value="ctx.fillText"/>
+			<item value="Veranda"/>
+			<item value="strokeText"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="341" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="458" key="DIALOG_HEIGHT"/>
-		<item value="619" key="DIALOG_X_ORIGIN"/>
-		<item value="201" key="DIALOG_Y_ORIGIN"/>
+		<item value="1367" key="DIALOG_X_ORIGIN"/>
+		<item value="134" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
