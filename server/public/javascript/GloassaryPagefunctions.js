@@ -23,6 +23,8 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 300"	  
   document.getElementById("hp").innerHTML = "Health: 200"
   document.getElementById("speed").innerHTML= "Speed: 100"
+  document.getElementById("uses").hidden = true;
+
   })
 
 
@@ -31,11 +33,113 @@ function switchTabs(evt, tabs) {
   document.getElementById("attack").innerHTML = "Attack: 100"	  
   document.getElementById("hp").innerHTML = "Health: 300"
   document.getElementById("speed").innerHTML= "Speed: 200"
+  document.getElementById("uses").hidden = true;
   })
   
-    document.getElementById("rouge").addEventListener("click", function(){
+  document.getElementById("rouge").addEventListener("click", function(){
   document.getElementById("characterName").innerHTML = "Rouge"
   document.getElementById("attack").innerHTML = "Attack: 100"	  
   document.getElementById("hp").innerHTML = "Health: 200"
   document.getElementById("speed").innerHTML= "Speed: 300"
+	  document.getElementById("uses").hidden = true;
   })
+  
+  document.getElementById("glitchGremlin").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Glitch Gremlin"
+  document.getElementById("attack").innerHTML = "Attack: 100"	  
+  document.getElementById("hp").innerHTML = "Health: 50"
+  document.getElementById("speed").innerHTML= "Speed: 100"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  document.getElementById("theGreatSegfault").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "The Great Segfault"
+  document.getElementById("attack").innerHTML = "Attack: 200"	  
+  document.getElementById("hp").innerHTML = "Health: 700"
+  document.getElementById("speed").innerHTML= "Speed: 100"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  
+  document.getElementById("smellyClass").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Smelly Class"
+  document.getElementById("attack").innerHTML = "Attack: 50"	  
+  document.getElementById("hp").innerHTML = "Health: 50"
+  document.getElementById("speed").innerHTML= "Speed: 150"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  
+  document.getElementById("codeTangler").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Code angler"
+  document.getElementById("attack").innerHTML = "Attack: 50"	  
+  document.getElementById("hp").innerHTML = "Health: 150"
+  document.getElementById("speed").innerHTML= "Speed: 50"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  document.getElementById("wandOfCopyPaste").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Wand Of Copy-Paste"
+  document.getElementById("attack").innerHTML = "Attack: 200"	  
+  document.getElementById("hp").innerHTML = "Health: N/A"
+  document.getElementById("speed").innerHTML= "Speed: N/A"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  
+  document.getElementById("ringOfConcurrency").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Ring Of Concurrency"
+  document.getElementById("attack").innerHTML = "Attack: 100"	  
+  document.getElementById("hp").innerHTML = "Health: 100"
+  document.getElementById("speed").innerHTML= "Speed: 100"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  
+  document.getElementById("multithreadedBoots").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Multithreaded Boots"
+  document.getElementById("attack").innerHTML = "Attack: N/A"	  
+  document.getElementById("hp").innerHTML = "Health: N/A"
+  document.getElementById("speed").innerHTML= "Speed: 300"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  document.getElementById("embeddingCrossbow").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Embedding Crossbow"
+  document.getElementById("attack").innerHTML = "Attack: 200"	  
+  document.getElementById("hp").innerHTML = "Health: N/A"
+  document.getElementById("speed").innerHTML= "Speed: N/A"
+  document.getElementById("uses").hidden = true;
+  })
+  
+  
+  document.getElementById("debuggingSpray").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Debugging Spray"
+  document.getElementById("attack").innerHTML = "Attack: 300"	  
+  document.getElementById("hp").innerHTML = "Health: N/A"
+  document.getElementById("speed").innerHTML= "Speed: N/A"
+  document.getElementById("uses").hidden = false
+  document.getElementById("uses").innerHTML = "Uses: 3"
+  })
+  
+  
+  document.getElementById("overclocker").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Overclocker"
+  document.getElementById("attack").innerHTML = "Attack: N/A"	  
+  document.getElementById("hp").innerHTML = "Health: N/A"
+  document.getElementById("speed").innerHTML= "Speed: 300"
+  document.getElementById("uses").hidden = false
+  document.getElementById("uses").innerHTML = "Uses: 3"	  
+  })
+  
+  document.getElementById("stickOfRam").addEventListener("click", function(){
+  document.getElementById("characterName").innerHTML = "Stick Of Ram"
+  document.getElementById("attack").innerHTML = "Attack: N/A"	  
+  document.getElementById("hp").innerHTML = "Health: 300"
+  document.getElementById("speed").innerHTML= "Speed: N/A"
+  document.getElementById("uses").hidden = false
+  document.getElementById("uses").innerHTML = "Uses: 3"
+  })
+  
+  
+  
