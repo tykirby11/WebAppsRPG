@@ -86,9 +86,10 @@ object CanvasDrawing {
         context.stroke();
     }
     
-    def drawUserArea(): Unit = {         context.font = "25px Arial";
-          context.fillText("Inventory Collapsed", 23, 432);
-          setTimeout(1500)(context.clearRect(23,412, 250,50));
+    def drawUserArea(): Unit = {         
+        context.font = "25px Arial";
+        context.fillText("Inventory Collapsed", 23, 432);
+        setTimeout(1500)(context.clearRect(23,412, 250,50));
         //user area
         context.rect(20,325, 760,85);
         context.stroke();
