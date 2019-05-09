@@ -210,24 +210,24 @@ object CanvasDrawing {
     reward = enemy.hp
 
     //Draw arena
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    clearCombatCanvas();
 
     handleCombatInput()
 
     drawBattleWindow();
-
+    
     drawUserArea();
-
+    
     drawAttackButton();
-
+    
     drawItemButton();
 
     drawHealthDivider();
-
+    
     drawUIDivider();
-
+    
     drawBossName();
-
+    
     drawPlayerHealth();
 
     drawEnemyInitial();
@@ -293,9 +293,10 @@ object CanvasDrawing {
   }
 
   def drawUserArea(): Unit = {
-    context.font = "25px Arial";
+    context.font = "25px Veranda";
     context.fillText("Inventory Collapsed", 23, 432);
     setTimeout(1500)(context.clearRect(23, 412, 250, 50));
+    
     //user area
     context.rect(20, 325, 760, 85);
     context.stroke();
@@ -305,7 +306,8 @@ object CanvasDrawing {
     //attack button
     context.rect(45, 340, bw, bh);
     context.stroke();
-    context.font = "30px Arial";
+    context.font = "30px Veranda";
+    context.fillStyle = "black";
     context.fillText("Attack", 65, 375);
   }
 
@@ -313,7 +315,7 @@ object CanvasDrawing {
     //item button
     context.rect(190, 340, bw, bh);
     context.stroke();
-    context.font = "30px Arial";
+    context.font = "30px Veranda";
     context.fillText("Item", 220, 375);
   }
 
@@ -323,6 +325,7 @@ object CanvasDrawing {
     context.moveTo(20, 85);
     context.lineTo(780, 85);
     context.stroke();
+    context.closePath();
   }
 
   def drawUIDivider(): Unit = {
@@ -331,6 +334,7 @@ object CanvasDrawing {
     context.moveTo(20, 325);
     context.lineTo(780, 325);
     context.stroke();
+    context.closePath();
   }
 
   def drawBossName(): Unit = {
@@ -341,7 +345,7 @@ object CanvasDrawing {
 
   def drawPlayerHealth(): Unit = {
     //player health
-    context.font = "20px Arial";
+    context.font = "20px Veranda";
     context.fillText("Player Health: " + pHealth, 40, 50);
   }
 
@@ -361,7 +365,7 @@ object CanvasDrawing {
 
   def drawEnemyHealth(): Unit = {
     context.clearRect(560, 30, 215, 50);
-    context.font = "20px Arial";
+    context.font = "20px Veranda";
     context.fillText("Enemy Health: " + enHealth, 600, 50);
   }
 
@@ -372,7 +376,7 @@ object CanvasDrawing {
 
   def drawZeroHealth(): Unit = {
     context.clearRect(560, 30, 215, 50);
-    context.font = "20px Arial";
+    context.font = "20px Veranda";
     context.fillText("Enemy Health: " + enHealth, 600, 50);
   }
 
@@ -419,13 +423,13 @@ object CanvasDrawing {
   }
   
   def displayDamageDealt(): Unit = {
-    context.font = "25px Arial";
+    context.font = "25px Veranda";
     context.fillText("Damage Dealt: " + pDamage, 376, 360);
     setTimeout(1500)(context.clearRect(330, 337, 436, 30));
   }
 
   def displayDamageReceived(): Unit = {
-    context.font = "25px Arial";
+    context.font = "25px Veranda";
     context.fillText("Damage Received: " + enDamage, 376, 400);
     setTimeout(1500)(context.clearRect(330, 377, 436, 30));
   }
@@ -439,13 +443,13 @@ object CanvasDrawing {
   }
 
   def drawInventoryStatusExpand(): Unit = {
-    context.font = "25px Arial";
+    context.font = "25px Veranda";
     context.fillText("Inventory Expanded", 23, 432);
     setTimeout(1500)(context.clearRect(23, 412, 250, 50));
   }
 
   def drawInventoryStatusCollapse(): Unit = {
-    context.font = "25px Arial";
+    context.font = "25px Veranda";
     context.fillText("Inventory Collapsed", 23, 432);
     setTimeout(1500)(context.clearRect(23, 412, 250, 50));
   }
@@ -503,6 +507,11 @@ object CanvasDrawing {
   def clearAnimation(): Unit = {
     context.clearRect(400, 150, 26, 110);
   }
+  
+  def clearCombatCanvas(): Unit = {
+    //clear out map area for event
+    context.clearRect(0, 0, canvas.width, canvas.height)
+  }
 
   def drawBorder(xPos: Int, yPos: Int, width: Int, height: Int, thickness: Int = 1): Unit = {
     context.fillStyle = "#000000";
@@ -511,4 +520,3 @@ object CanvasDrawing {
   //----------------------------------------end of combat mode helper functions--------------------------------------------//
 
 }
-
