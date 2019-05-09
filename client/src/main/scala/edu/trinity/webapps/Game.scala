@@ -57,62 +57,105 @@ object CanvasDrawing {
     private var itemVisible = false;
     
     def drawArena(): Unit = {
-      //battle window
+  
+      drawBattleWindow();
+      
+      drawUserArea();
+      
+      drawAttackButton();
+      
+      drawItemButton();
+
+      drawHealthDivider();
+       
+      drawUIDivider();
+        
+      drawBossName();
+        
+      drawPlayerHealth();
+        
+      drawEnemy();
+        
+      arenaExists = true;
+        
+    }
+    
+    def drawBattleWindow(): Unit = {
+        //battle window
         context.rect(20,20,760,390);
         context.stroke();
-        
-      //user area
+    }
+    
+    def drawUserArea(): Unit = {         context.font = "25px Arial";
+          context.fillText("Inventory Collapsed", 23, 432);
+          setTimeout(1500)(context.clearRect(23,412, 250,50));
+        //user area
         context.rect(20,325, 760,85);
         context.stroke();
-        
+    }
+    
+    def drawAttackButton(): Unit = {
       //attack button
         context.rect(45,340,bw,bh);
         context.stroke();
         context.font = "30px Arial";
         context.fillText("Attack",65,375);
-        
-      //item button
+    }
+    
+    def drawItemButton(): Unit = {
+        //item button
         context.rect(190,340,bw,bh);
         context.stroke();
         context.font = "30px Arial";
         context.fillText("Item", 220, 375);
-      
-      //health divider
+    }
+    
+    def drawHealthDivider(): Unit = {
+        //health divider
         context.beginPath();
         context.moveTo(20,85);
         context.lineTo(780,85);
         context.stroke();
-        
-      //ui divider line  
+    }
+    
+    def drawUIDivider(): Unit = {
+        //ui divider line  
         context.beginPath();
         context.moveTo(20,325);
         context.lineTo(780,325);
         context.stroke();
-        
-      //Boss Name
+    }
+    
+    def drawBossName(): Unit = {
+        //Boss Name
         context.font = "30px Arial"
         context.fillText("GLITCH GREMLIN", 255, 60);
-        
-      //player health
+    }
+    
+    def drawPlayerHealth(): Unit = {
+       //player health
         context.font = "20px Arial";
         context.fillText("Player Health: " + pHealth, 40, 50);
-        
-        
-        drawEnemy();
-        
-        arenaExists = true;
         
     }
     
     def drawEnemyInitial() : Unit = {
       context.drawImage(glitch, 300,100,192,192);
       
+      compareSpeed();
+      
+      drawEnemyHealth();
+    }
+    
+    def compareSpeed(): Unit = {
       if(enSpeed < pSpeed){
         hasAttacked = false;
       } else {
         hasAttacked = true;
       }
-      
+    }
+    
+    def drawEnemyHealth(): Unit = {
       context.clearRect(560,30,215,50); 
       context.font = "20px Arial";
       context.fillText("Enemy Health: " + enHealth, 600, 50);
@@ -121,9 +164,7 @@ object CanvasDrawing {
     def drawEnemy() : Unit = {
       context.drawImage(glitch, 300,100,192,192);
       
-      context.clearRect(560,30,215,50); 
-      context.font = "20px Arial";
-      context.fillText("Enemy Health: " + enHealth, 600, 50);
+      drawEnemyHealth();
     }
     
     def drawZeroHealth() : Unit = {
@@ -136,55 +177,51 @@ object CanvasDrawing {
       //test player damage
       enHealth -= pDamage;
       
+      enemyDefeat();
+
+      hasAttacked = true;
+    }
+    
+    def enemyDefeat(): Unit = {
       if (enHealth <= 0){
         enHealth = 0;
         context.clearRect(300,100,192,192);
         gold += 50;
         
-        context.font = "20px Arial";
+        //context.font = "20px Arial";
       }
-      hasAttacked = true;
     }
-    
     
     def enemyAttack() : Unit = {
       pHealth -= enDamage;
       
       context.clearRect(40,25,200,50);
-      context.font = "20px Arial";
-      context.fillText("Player Health: " + pHealth, 40, 50);
+      drawPlayerHealth();
       hasAttacked = false;
     }
+    
     
     def displayDamageDealt() : Unit = {
       context.font = "25px Arial";
       context.fillText("Damage Dealt: " + pDamage, 376, 360);
-      //context.rect(330,337,436,30);
-      //context.stroke();
       setTimeout(1500)(context.clearRect(330, 337, 436, 30));
     }
     
     def displayDamageReceived() : Unit = {
       context.font = "25px Arial";
       context.fillText("Damage Received: " + enDamage, 376, 400);
-      //context.rect(330,377,436,30);
-      //context.stroke();
       setTimeout(1500)(context.clearRect(330, 377, 436, 30));
     }
     
     //on mouse click, prints coordinates of mouse and sees if buttons are pressed
     canvas.onmousedown = (e: dom.MouseEvent) => {
-      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
-      
-      println(s"x: ${coords._1}, y: ${coords._2}")
+      //val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
+      //println(s"x: ${coords._1}, y: ${coords._2}")
       
       //if attack is pressed and if button is showing
       if(((e.clientX - canvas.offsetLeft) > 45 && (e.clientX - canvas.offsetLeft) < 170) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){             
         if(enHealth > 0 && hasAttacked != true){
-          attack();
-          displayDamageDealt();
-          setTimeout(1500)(enemyAttack());
-          setTimeout(2000)(displayDamageReceived());
+            playerAttackTurn();
         }
         if(enHealth > 0){
           setTimeout(550)(drawEnemy());
@@ -192,25 +229,38 @@ object CanvasDrawing {
           drawZeroHealth();
         }
       }
+    
+    def playerAttackTurn(): Unit = {
+      attack();
+      displayDamageDealt();
+      setTimeout(1500)(enemyAttack());
+      setTimeout(2000)(displayDamageReceived());
+    }
       
       //if item button is pressed
       if(((e.clientX - canvas.offsetLeft) > 193 && (e.clientX - canvas.offsetLeft) < 316) && ((e.clientY - canvas.offsetTop) > 342 && (e.clientY - canvas.offsetTop) < 392) && arenaExists == true){
         if(itemVisible == true){
           dom.document.querySelector("#inventory-wrapper").asInstanceOf[HTMLElement].style.display = "initial";
           itemVisible = false;
-          
-          context.font = "25px Arial";
-          context.fillText("Inventory Expanded", 23, 432);
-          setTimeout(1500)(context.clearRect(23,412, 250,50));
+          drawInventoryStatusExpand();
         } else {
           dom.document.querySelector("#inventory-wrapper").asInstanceOf[HTMLElement].style.display = "none";
           itemVisible = true;
-          
-          context.font = "25px Arial";
-          context.fillText("Inventory Collapsed", 23, 432);
-          setTimeout(1500)(context.clearRect(23,412, 250,50));
+          drawInventoryStatusCollapse();
         }
       }
+    }
+    
+    def drawInventoryStatusExpand(): Unit = {
+       context.font = "25px Arial";
+       context.fillText("Inventory Expanded", 23, 432);
+       setTimeout(1500)(context.clearRect(23,412, 250,50));
+    }
+    
+    def drawInventoryStatusCollapse(): Unit = {
+        context.font = "25px Arial";
+        context.fillText("Inventory Collapsed", 23, 432);
+        setTimeout(1500)(context.clearRect(23,412, 250,50));
     }
     
     def currencySpend(): Unit = {
@@ -230,8 +280,8 @@ object CanvasDrawing {
       val tableHeaderBut = dom.document.createElement("th").asInstanceOf[HTMLElement];
       tableHeaderBut.innerHTML = "<button>Use</button>";
       tableHeaderBut.id = "useItem";
-      tableHeaderBut.onclick = { (e:Event) => deleteInvItem();}
       val tableRow = dom.document.createElement("tr").asInstanceOf[HTMLElement];
+      tableHeaderBut.onclick = { (e:Event) => tableHeaderBut.parentNode.parentNode.removeChild(tableRow);}
       
       conTable.appendChild(tableRow);
       tableRow.appendChild(tableHeaderItem);
