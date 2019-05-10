@@ -43,6 +43,16 @@ extends AbstractController(cc) with HasDatabaseConfigProvider[JdbcProfile] {
     Ok(views.html.login())
   }
   
+  /*def menu = Action { implicit request =>
+    if(request.session.get("username").nonEmpty){
+      Ok(views.html.menu())
+      
+    }
+    else{
+      Redirect(routes.LoginController.loginPage)
+    }
+  }*/
+  
   def menu = Action {
     Ok(views.html.menu())
   }

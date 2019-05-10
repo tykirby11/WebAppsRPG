@@ -10,7 +10,14 @@ import play.api.data.Forms._
 class mainMenuController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   def game = Action { implicit request =>
-    Ok(views.html.gamePage())
+    //Ok(views.html.gamePage())
+    if(request.session.get("username").nonEmpty){
+      Ok(views.html.gamePage())
+      
+    }
+    else{
+      Redirect(routes.LoginController.loginPage)
+    }
   }
   
   def mainmenu = Action { implicit request =>

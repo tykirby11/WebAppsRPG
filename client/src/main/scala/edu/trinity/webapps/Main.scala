@@ -8,8 +8,14 @@ object ScalandiaMain {
   def main(args: Array[String]): Unit = {
     dom.window.onload = (e: dom.raw.Event) => {
 
-    if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawCharacterSelect();
+      if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawCharacterSelect();
+    
     }
+    
+    //if(request.session.get("username").nonEmpty){
+      
+    //}
+    
   }
   
   case class NotAString(i: Int, s: String)

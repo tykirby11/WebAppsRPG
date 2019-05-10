@@ -23,11 +23,14 @@
 	  <input type ="text" name = "username" placeholder = "username" id = "loginUser">
 	  <input type= "password" name = "password" placeholder = "password" id = "loginPass">
 
-    <a id = "" href = "#"> forgot your password? </a>
     <br>
 
 	  <input type = "submit">
     <br>
+    
+    <a href="@routes.LoginController.logout" id = "LogOut"> logout </a>
+    <br>
+    
     <a id = "noAccount" href = "#"> don't have an account? </a>
 
 	</form>
@@ -35,7 +38,7 @@
   </div>
   
   <div class="wrapper">
-  <div id="formContentCreate">
+  <div id="formContent">
 
         <h2> Create </h2>
 
@@ -43,12 +46,10 @@
 	  <input type ="text" name = "usernameC" placeholder = "username" id = "createUser">
 	  <input type= "password" name = "passwordC" placeholder = "password" id = "createPass">
 
-    <a id = "" href = "#"> forgot your password? </a>
     <br>
 
 	  <input type = "submit">
     <br>
-    <a id = "noAccount" href = "#"> don't have an account? </a>
 
 	</form>
 
