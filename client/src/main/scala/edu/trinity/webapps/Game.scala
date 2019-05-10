@@ -210,6 +210,8 @@ object CanvasDrawing {
 
     drawEventElements();
 
+    addItem(item);
+    
   }
   
   def drawWeaponEvent(weapon: WeaponEntry): Unit = {
@@ -225,6 +227,8 @@ object CanvasDrawing {
     clearEventCanvas();
 
     drawEventElements();
+    
+    addEquip(weapon);
 
   }
   
@@ -605,7 +609,56 @@ object CanvasDrawing {
     }
   }
 
+  def addEquip(weapon: WeaponEntry): Unit = {
+    itemName = weapon.name
+    itemHpMod = weapon.hpmod
+    itemAtkMod = weapon.atkmod
+    itemSpdMod = weapon.spdmod
+    
+    val equipTable = dom.document.getElementById("equipment").asInstanceOf[HTMLElement];
+    val tableRow = dom.document.createElement("tr").asInstanceOf[HTMLElement];
+    val tableHeaderEquip = dom.document.createElement("th").asInstanceOf[HTMLElement];
+    tableHeaderEquip.innerHTML = itemName;
+    println(tableHeaderEquip.innerHTML);
+    
+    equipTable.appendChild(tableRow);
+    tableRow.appendChild(tableHeaderEquip);
+    
+    pHealth += itemHpMod;
+    pSpeed += itemSpdMod;
+    pDamage += itemAtkMod;
+    
+  }
   
+    def addItem(item: ItemEntry): Unit = {
+    itemName = item.name
+    itemHpMod = item.hpmod
+    itemAtkMod = item.atkmod
+    itemSpdMod = item.spdmod
+    
+    val equipTable = dom.document.getElementById("consumables").asInstanceOf[HTMLElement];
+    val tableRow = dom.document.createElement("tr").asInstanceOf[HTMLElement];
+    val tableHeaderEquip = dom.document.createElement("th").asInstanceOf[HTMLElement];
+    val tableHeaderBut = dom.document.createElement("th").asInstanceOf[HTMLElement];
+    
+     println(tableHeaderEquip.innerHTML);
+
+    
+    tableHeaderEquip.innerHTML = itemName;
+    tableHeaderBut.innerHTML = "<button>Use</button>";
+    tableHeaderBut.onclick = { (e: Event) => tableHeaderBut.parentNode.parentNode.removeChild(tableRow); }
+    
+    
+    equipTable.appendChild(tableRow);
+    tableRow.appendChild(tableHeaderEquip);
+    tableRow.appendChild(tableHeaderBut);
+    
+    pHealth += itemHpMod;
+    pDamage += itemAtkMod;
+    pSpeed += itemSpdMod;
+  }
+ 
+    
   def addInvItem(): Unit = {
     var testid = 0;
     //var valueOfItem = dom.document.getElementById("ty2").asInstanceOf[HTMLElement];
