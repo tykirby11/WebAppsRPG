@@ -8,7 +8,7 @@ object ScalandiaMain {
   def main(args: Array[String]): Unit = {
     dom.window.onload = (e: dom.raw.Event) => {
 
-    if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.start()//CanvasDrawing.drawArena()
+    if(dom.document.getElementById("gameCanvas") != null) CanvasDrawing.drawCharacterSelect();
     }
   }
   

@@ -30,11 +30,11 @@ object CanvasDrawing {
   private var eventActive = false;
   
   //Player stats defaults 
-  private val pHealthDefault = 1000;
-  private val pSpeedDefault = 40;
-  private val pDamageDefault = 300;
-  private val scoreDefault = 0;
-  private val goldDefault = 100;
+  private var pHealthDefault = 1000;
+  private var pSpeedDefault = 40;
+  private var pDamageDefault = 300;
+  private var scoreDefault = 0;
+  private var goldDefault = 100;
 
   //Player stats 
   private var pHealth = 1000;
@@ -43,12 +43,16 @@ object CanvasDrawing {
   private var score = 0;
   private var gold = 100;
 
+
   //Enemy stats
   private var enName = ""
   private var enHealth = 30;
   private var enSpeed = 30;
   private var enDamage = 5;
   private var reward = 50
+  
+  //private var currentLNode = new Node{val state: NodeState.Value, val dbList: List[Any], def rollSelection: Any};
+  //private var currentRNode = new Node{};
   
   //Event
   private var itemName = ""
@@ -70,10 +74,18 @@ object CanvasDrawing {
   private var itemVisible = false;
 
   private var eventTriggered = false
+  
+  //Character Select
+  private var charSelExists = false;
+  private var youChosePopup = false;
+  private var selectedID = 0;
   //--------------------------------end of global variables--------------------------------//
 
   //-------------------------------beginning of main map screen----------------------------//
   def drawMap(nodeL: Node, nodeR: Node): Unit = {
+    
+    //currentLNode = nodeL;
+    //currentRNode = nodeR
 
     println(nodeL.dbList)
     println(nodeR.dbList)
@@ -452,6 +464,10 @@ object CanvasDrawing {
     context.lineTo(780, 325);
     context.stroke();
     context.closePath();
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(0, 0);
+    context.stroke();
   }
 
   def drawBossName(): Unit = {
@@ -515,28 +531,33 @@ object CanvasDrawing {
 
   def enemyAttack(): Unit = {
     println("Enemy Attack")
+    if(enHealth > 0){
     pHealth -= enDamage;
     context.clearRect(40, 25, 200, 50);
     drawPlayerHealth();
     checkPHealth();
     hasAttacked = false;
+    }
   }
 
   def checkPHealth(): Unit = {
     if(pHealth <= 0){
       println("checked Health");
-      setTimeout(4000)(start());
-      resetStats();
+      arenaExists = false;
+      //context.clearRect(0, 0, 800, 600);
+      setTimeout(4000)(gameOver());
+      
+      //resetStats();
     }
   }
   
-  def resetStats(): Unit = {
-      pHealth = pHealthDefault;
-      pSpeed = pSpeedDefault;
-      pDamage = pDamageDefault;
-      score = scoreDefault;
-      gold = goldDefault;
-      println(pHealth);
+  def gameOver(): Unit = {
+    //context.clearRect(0, 0, canvas.width, canvas.height);
+    //arenaExists = false;
+    context.font = "25px Veranda";
+    //context.clearRect(0, 0, 800, 600);
+    setTimeout(500)(context.fillText("Game Over. You have failed Lewis", 300, 300));
+    setTimeout(5000)(dom.window.location.href = "http://pandora08.cs.trinity.edu:9000/");
   }
   
   def displayDamageDealt(): Unit = {
@@ -546,9 +567,11 @@ object CanvasDrawing {
   }
 
   def displayDamageReceived(): Unit = {
+    if(enHealth > 0){
     context.font = "25px Veranda";
     context.fillText("Damage Received: " + enDamage, 376, 400);
     setTimeout(1500)(context.clearRect(330, 377, 436, 30));
+    }
   }
 
   def playerAttackTurn(): Unit = {
@@ -571,21 +594,25 @@ object CanvasDrawing {
     setTimeout(1500)(context.clearRect(23, 412, 250, 50));
   }
 
-  def currencySpend(): Unit = {
-    if (gold >= 50) {
-      gold -= 50;
+  def currencySpend(price: Int): Unit = {
+    if (gold >= price) {
+      gold -= price;
       addInvItem();
+      //drawUserScoreAndGold;
+      //drawMap(currentLNode, currentRNode);
     } else {
       dom.window.alert("You're broke like a sad bloke, bucko");
     }
   }
 
+  
   def addInvItem(): Unit = {
+    var testid = 0;
+    //var valueOfItem = dom.document.getElementById("ty2").asInstanceOf[HTMLElement];
+    var result = ""//valueOfItem.textContent;//"Debugging Spray"
     val conTable = dom.document.getElementById("consumables").asInstanceOf[HTMLElement];
     val tableHeaderItem = dom.document.createElement("th").asInstanceOf[HTMLElement];
-    if(){
-      tableHeaderItem.innerHTML = "<p>Debugging Spray</p>";
-    }
+    tableHeaderItem.innerHTML = "<p>" + result + "</p>";
     val tableHeaderBut = dom.document.createElement("th").asInstanceOf[HTMLElement];
     tableHeaderBut.innerHTML = "<button>Use</button>";
     tableHeaderBut.id = "useItem";
@@ -602,10 +629,32 @@ object CanvasDrawing {
     dom.window.alert("poop");
   }
 
-  dom.document.getElementById("sprayPurchase").addEventListener("click", (event: Event) => {
-    currencySpend();
+  dom.document.getElementById("purchaseSpray").addEventListener("click", (event: Event) => {
+    currencySpend(50);
+    println(dom.document.createElement("ty1").asInstanceOf[HTMLElement].textContent)
+    
+    })
+  dom.document.getElementById("purchaseClock").addEventListener("click", (event: Event) => {
+    currencySpend(50);
+    //testid = 2;
+  })
+  dom.document.getElementById("purchaseRAM").addEventListener("click", (event: Event) => {
+    currencySpend(50);
+  })
+  dom.document.getElementById("purchaseBow").addEventListener("click", (event: Event) => {
+    currencySpend(50);
+  })
+  dom.document.getElementById("purchaseBoots").addEventListener("click", (event: Event) => {
+    currencySpend(50);
+  })
+  dom.document.getElementById("purchaseRing").addEventListener("click", (event: Event) => {
+    currencySpend(50);
+  })
+  dom.document.getElementById("purchaseWand").addEventListener("click", (event: Event) => {
+    currencySpend(50);
   })
 
+  
   def attack(): Unit = {
     setTimeout(250)(context.drawImage(slice1, 400, 150, 26, 110));
     setTimeout(250)(clearAnimation);
@@ -649,4 +698,153 @@ object CanvasDrawing {
   }
   //----------------------------------------end of combat mode helper functions--------------------------------------------//
 
+  //----------------------------------------Character select---------------------------------------------------------------//
+
+  
+    def drawCharacterSelect(): Unit = {
+       
+        charSelect();
+        tankSelect();
+        warriorSelect();
+        rougeSelect();
+
+        charSelExists = true;
+    }
+    
+    def charSelect() : Unit ={
+      context.clearRect(0, 900, canvas.width, canvas.height);
+       //battle window
+        context.rect(20,20,760,460);
+        context.stroke();
+      //col 1          
+        context.beginPath();
+        context.moveTo(260, 20);
+        context.lineTo(260, 480);
+        context.stroke();
+      //col 2  
+        context.beginPath();
+        context.moveTo(520, 20);
+        context.lineTo(520, 480);
+        context.stroke();
+      // bottom select line
+        context.beginPath();
+        context.moveTo(20, 420);
+        context.lineTo(780, 420);
+        context.stroke();
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(0, 0);
+        context.stroke();
+        //select col 1
+        context.font = "30px Arial";
+        context.fillText("Select", 100, 460);
+        //select col 2
+        context.font = "30px Arial";
+        context.fillText("Select", 350, 460);
+        //select col 3
+        context.font = "30px Arial";
+        context.fillText("Select", 600, 460);
+    }
+    
+    def tankSelect() : Unit = {
+        context.stroke();
+        context.font = "50px Arial";
+        context.fillText("Tank", 87, 65);
+        context.font = "30px Arial";
+        context.fillText("Health: 300", 65, 215);
+        context.fillText("Attack: 200", 65, 265);
+        context.fillText("Speed: 100", 65, 315);
+
+    }
+    
+    def warriorSelect() : Unit = {
+        context.stroke();
+        context.font = "50px Arial";
+        context.fillText("Warrior", 315, 65);
+        context.font = "30px Arial";
+        context.fillText("Health: 100", 315, 215);
+        context.fillText("Attack: 300", 315, 265);
+        context.fillText("Speed: 200", 315, 315);
+
+    }
+    def rougeSelect() : Unit = {
+        context.stroke();
+        context.font = "50px Arial";
+        context.fillText("Rouge", 580, 65);
+        context.font = "30px Arial";
+        context.fillText("Health: 100", 580, 215);
+        context.fillText("Attack: 200", 580, 265);
+        context.fillText("Speed: 300", 580, 315);
+
+    }
+    
+    def select() : Unit = {
+      if(youChosePopup == true){
+        //context.rect(100,100,560,260);
+        context.fillStyle = "rgb(169,169,169)";
+        context.fillRect(100,100,560,260);
+        context.fillStyle = "rgb(0,0,0)";
+        context.font = "50px Arial";
+        context.fillText("You chose:",245,150);
+        //cancel
+        if(selectedID == 1){
+        context.font = "70px Arial";
+        context.fillText("Tank!",280,275);
+          pHealth = 300;
+          pSpeed = 100;
+          pDamage = 200;
+        
+        }
+        if(selectedID == 2){
+        context.font = "70px Arial";
+        context.fillText("Warrior!",280,275);
+        pHealth = 100;
+        pSpeed = 200;
+        pDamage = 300;
+        }
+        if(selectedID == 3){
+        context.font = "70px Arial";
+        context.fillText("Rouge!",280,275);
+        pHealth = 100;
+        pSpeed = 300;
+        pDamage = 50;
+        
+        }
+        setTimeout(4000)(context.clearRect(0,0,810,800));
+        setTimeout(4000)(start());
+      }
+    }
+    
+    //on mouse click, prints coordinates of mouse and sees if buttons are pressed
+    canvas.onmousedown = (e: dom.MouseEvent) => {
+      val coords = (e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop)
+      
+      println(s"x: ${coords._1}, y: ${coords._2}")
+      
+      //Select in col 1
+      if(((e.clientX - canvas.offsetLeft) > 20 && (e.clientX - canvas.offsetLeft) < 260) && ((e.clientY - canvas.offsetTop) > 422 && (e.clientY - canvas.offsetTop) < 482) && charSelExists == true){
+        println("col 1 clicked")
+        selectedID = 1;
+        youChosePopup = true;
+        charSelExists = false;
+        select();
+    }
+      //Select in col 2
+      if(((e.clientX - canvas.offsetLeft) > 260 && (e.clientX - canvas.offsetLeft) < 522) && ((e.clientY - canvas.offsetTop) > 422 && (e.clientY - canvas.offsetTop) < 482) && charSelExists == true){
+        println("col 2 clicked")
+        selectedID = 2;
+        youChosePopup = true;
+        charSelExists = false;
+        select();
+    }
+      //Select in col 3
+      if(((e.clientX - canvas.offsetLeft) > 522 && (e.clientX - canvas.offsetLeft) < 782) && ((e.clientY - canvas.offsetTop) > 422 && (e.clientY - canvas.offsetTop) < 482) && charSelExists == true){
+        println("col 3 clicked")
+        selectedID = 3;
+        youChosePopup = true;
+        charSelExists = false;
+        select();
+    }     
+     
+    }
 }
